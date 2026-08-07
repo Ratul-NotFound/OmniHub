@@ -319,6 +319,88 @@ export const RESOURCES: Resource[] = [
     rating: 5.0
   },
   {
+    id: 'ai-langchain',
+    title: 'LangChain Framework',
+    description: 'World\'s leading open-source framework for building agentic LLM applications, chains, vector retrieval pipelines, and memory wrappers.',
+    url: 'https://www.langchain.com',
+    category: 'ai',
+    subcategory: 'coding',
+    subcategories: ['coding', 'llmapi'],
+    tags: ['#1 Agent Framework', 'LangChain', 'Python & TS', 'Vector RAG'],
+    isHot: true,
+    rating: 5.0,
+    useCases: [
+      'Building state-of-the-art RAG applications and AI document assistants.',
+      'Chaining multiple LLMs with external tools, APIs, and databases.',
+      'Implementing multi-agent cognitive architecture.'
+    ],
+    features: [
+      'Standardized abstractions for LLMs, ChatModels, and Prompt Templates.',
+      'LangGraph for building stateful multi-actor agent workflows.',
+      'LangSmith observability, debugging, and evaluation platform.'
+    ],
+    freeTierDetails: '100% open-source framework with free LangSmith starter tier.'
+  },
+  {
+    id: 'ai-openrouter',
+    title: 'OpenRouter (Omni LLM Gateway)',
+    description: 'Unified API gateway to access 200+ open and proprietary AI models (Claude 3.5, DeepSeek R1, GPT-4o, Llama 3.3) with single API key and zero markup.',
+    url: 'https://openrouter.ai',
+    category: 'free',
+    subcategory: 'llmapi',
+    subcategories: ['llmapi', 'devplatform'],
+    tags: ['200+ LLMs Unified', 'OpenRouter', 'Fallback Routing', 'Free Models'],
+    isHot: true,
+    rating: 5.0,
+    useCases: [
+      'Accessing all top AI models using a single unified API endpoint.',
+      'Switching dynamically between Claude, OpenAI, and free open models.',
+      'Automatic fallback routing if an AI model provider goes down.'
+    ],
+    features: [
+      'Standardized OpenAI-compatible API format.',
+      'Includes free open-weight models (DeepSeek R1 free, Llama 3.3 free).',
+      'Real-time cost tracking and latency benchmarks.'
+    ],
+    freeTierDetails: 'Includes multiple free rate-limited AI models free forever.'
+  },
+  {
+    id: 'ai-litellm',
+    title: 'LiteLLM Proxy Router',
+    description: 'Lightweight Python SDK & proxy server to call 100+ LLM APIs (OpenAI, Anthropic, Ollama, Bedrock, Groq) using standardized OpenAI format with load balancing.',
+    url: 'https://www.litellm.ai',
+    category: 'ai',
+    subcategory: 'devplatform',
+    subcategories: ['devplatform', 'llmapi'],
+    tags: ['100+ LLM Proxy', 'OpenAI Format', 'Load Balancing', 'Open Source'],
+    isHot: true,
+    rating: 4.9
+  },
+  {
+    id: 'ai-llamaindex',
+    title: 'LlamaIndex RAG Framework',
+    description: 'Leading data framework for connecting custom data sources (PDFs, SQL databases, Notion, Slack) to LLMs for RAG application development.',
+    url: 'https://www.llamaindex.ai',
+    category: 'ai',
+    subcategory: 'coding',
+    subcategories: ['coding', 'devplatform'],
+    tags: ['RAG Framework', 'Data Ingestion', 'Vector Indexing', 'Python/TS'],
+    isHot: true,
+    rating: 4.9
+  },
+  {
+    id: 'ai-vercel-sdk',
+    title: 'Vercel AI SDK',
+    description: 'The open-source TypeScript toolkit for building streaming AI web applications with React, Next.js, Vue, and Svelte.',
+    url: 'https://sdk.vercel.ai/docs',
+    category: 'libraries',
+    subcategory: 'uicomponents',
+    subcategories: ['uicomponents', 'frontend'],
+    tags: ['Streaming AI', 'Next.js', 'TypeScript', 'Vercel'],
+    isHot: true,
+    rating: 4.9
+  },
+  {
     id: 'groq',
     title: 'Groq',
     description: 'Real-time LPU (Language Processing Unit) inference platform delivering near-zero latency text replies for top open-weights models.',
@@ -915,6 +997,38 @@ export const RESOURCES: Resource[] = [
   // ================= FREE RESOURCES =================
 
   // --- Free Databases ---
+  {
+    id: 'free-chromadb',
+    title: 'ChromaDB Vector Database',
+    description: 'Open-source AI-native embedding vector database built for local RAG indexing, semantic search, and LLM memory storage.',
+    url: 'https://www.trychroma.com',
+    category: 'free',
+    subcategory: 'database',
+    subcategories: ['database', 'freeresearch'],
+    tags: ['Vector DB', 'Local RAG', 'Open Source', 'Embeddings'],
+    isHot: true,
+    rating: 4.9
+  },
+  {
+    id: 'free-pinecone',
+    title: 'Pinecone Free Vector Search',
+    description: 'Managed serverless vector database providing high-throughput vector search for RAG applications with 2GB free vector storage.',
+    url: 'https://www.pinecone.io',
+    category: 'free',
+    subcategory: 'database',
+    tags: ['Serverless Vector DB', 'RAG Search', '2GB Free', 'Ultra Fast'],
+    rating: 4.8
+  },
+  {
+    id: 'free-qdrant',
+    title: 'Qdrant Vector Engine',
+    description: 'High-performance Rust-powered open-source vector similarity search engine and database with 1GB free cloud cluster.',
+    url: 'https://qdrant.tech',
+    category: 'free',
+    subcategory: 'database',
+    tags: ['Rust Vector DB', 'Similarity Search', 'Open Source', '1GB Free'],
+    rating: 4.8
+  },
   {
     id: 'free-firebase',
     title: 'Firebase Spark Plan',
