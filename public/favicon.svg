@@ -1,17 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
-  <!-- Dark Zinc 950 Base Shield -->
-  <rect width="512" height="512" rx="96" fill="#09090b"/>
-  <rect x="24" y="24" width="464" height="464" rx="72" fill="#121214" stroke="#27272a" stroke-width="12"/>
+  <!-- Soft Off-White Rounded Card (Matching User Screenshot) -->
+  <rect x="32" y="32" width="448" height="448" rx="100" fill="#f3f4f6" stroke="#000000" stroke-width="8" stroke-opacity="0.15"/>
 
-  <!-- Precision Developer 'O' Hub Frame -->
-  <rect x="136" y="136" width="240" height="240" rx="44" fill="none" stroke="#f4f4f5" stroke-width="24"/>
-
-  <!-- Developer Blue Core Hub -->
-  <rect x="208" y="208" width="96" height="96" rx="18" fill="#3b82f6"/>
-
-  <!-- 4 Accent Hub Nodes matching website category tokens -->
-  <circle cx="136" cy="136" r="22" fill="#3b82f6"/>
-  <circle cx="376" cy="136" r="22" fill="#a855f7"/>
-  <circle cx="376" cy="376" r="22" fill="#10b981"/>
-  <circle cx="136" cy="376" r="22" fill="#eab308"/>
+  <!-- Centered Condensed Oval 'O' Monogram -->
+  <rect x="196" y="164" width="120" height="184" rx="60" fill="none" stroke="#09090b" stroke-width="36"/>
 </svg>
