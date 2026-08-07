@@ -96,11 +96,21 @@ export default function App() {
 
     const updated = [formattedResource, ...resources];
     setResources(updated);
+    
+    // Automatically reset category/search so new submission is immediately visible at the top!
+    setActiveCategory('all');
+    setActiveSubcategory('all');
+    setSearchQuery('');
+    setShowBookmarksOnly(false);
 
     // Save custom resources locally
-    const savedCustom = localStorage.getItem('custom_resources');
-    const customItems: Resource[] = savedCustom ? JSON.parse(savedCustom) : [];
-    localStorage.setItem('custom_resources', JSON.stringify([formattedResource, ...customItems]));
+    try {
+      const savedCustom = localStorage.getItem('custom_resources');
+      const customItems: Resource[] = savedCustom ? JSON.parse(savedCustom) : [];
+      localStorage.setItem('custom_resources', JSON.stringify([formattedResource, ...customItems]));
+    } catch (err) {
+      console.error('Failed to save custom resource:', err);
+    }
   };
 
   // Direct tag clicking helper
