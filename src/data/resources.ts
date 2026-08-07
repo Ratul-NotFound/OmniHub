@@ -92,6 +92,7 @@ export const FREE_SUBCATEGORIES: Subcategory[] = [
   { id: 'all', name: 'All Free Tools' },
   { id: 'database', name: 'Free Databases' },
   { id: 'hosting', name: 'Free Hosting & Cloud' },
+  { id: 'freeresearch', name: 'Free AI & Research Labs' },
   { id: 'domains', name: 'Free Domains & SSL' },
   { id: 'llmapi', name: 'Free AI & LLM APIs' },
   { id: 'freedev', name: 'Free Dev Tools & Auth' },
@@ -1044,6 +1045,94 @@ export const RESOURCES: Resource[] = [
     subcategory: 'hosting',
     tags: ['Free Node Server', 'Collaborative', 'Remix Apps'],
     rating: 4.7
+  },
+
+  // --- Free AI & Research Labs ---
+  {
+    id: 'free-colab',
+    title: 'Google Colab Free Cloud GPUs',
+    description: 'Free hosted Jupyter notebook environment with free access to NVIDIA T4 GPUs, TPU v2 accelerators, 12GB RAM, and Google Drive integration.',
+    url: 'https://colab.research.google.com',
+    category: 'free',
+    subcategory: 'freeresearch',
+    subcategories: ['freeresearch', 'devplatform'],
+    tags: ['Free GPU', 'Jupyter Notebook', 'Google', 'AI Research'],
+    isHot: true,
+    rating: 5.0
+  },
+  {
+    id: 'free-kaggle-notebooks',
+    title: 'Kaggle Free GPU Notebooks',
+    description: 'Cloud Jupyter notebooks offering 30 hours per week of free NVIDIA P100 / T4 x2 GPU acceleration, 20GB RAM, and 300,000+ public datasets.',
+    url: 'https://www.kaggle.com/code',
+    category: 'free',
+    subcategory: 'freeresearch',
+    subcategories: ['freeresearch', 'devplatform'],
+    tags: ['30h Free GPU/wk', 'Kaggle', 'Datasets', 'Model Training'],
+    isHot: true,
+    rating: 4.9
+  },
+  {
+    id: 'free-hf-spaces',
+    title: 'Hugging Face Spaces Free',
+    description: 'Free cloud hosting for AI web demos, Gradio apps, Streamlit dashboards, and open-source model testing directly from Hugging Face repos.',
+    url: 'https://huggingface.co/spaces',
+    category: 'free',
+    subcategory: 'freeresearch',
+    subcategories: ['freeresearch', 'devplatform'],
+    tags: ['Free AI Hosting', 'Gradio', 'Streamlit', 'Hugging Face'],
+    isHot: true,
+    rating: 4.9
+  },
+  {
+    id: 'free-lightning-ai',
+    title: 'Lightning AI Free GPU Compute',
+    description: 'PyTorch Lightning research platform offering 22 free GPU compute credits per month for AI model training, fine-tuning, and zero-setup notebooks.',
+    url: 'https://lightning.ai',
+    category: 'free',
+    subcategory: 'freeresearch',
+    tags: ['Free PyTorch GPU', 'AI Training', 'Model Fine-Tuning'],
+    rating: 4.8
+  },
+  {
+    id: 'free-paperspace',
+    title: 'Paperspace Gradient Free GPUs',
+    description: 'Free cloud GPU instances (Free GPU-P4000 & M4000) for machine learning research, deep learning experiments, and PyTorch model testing.',
+    url: 'https://www.paperspace.com/gradient',
+    category: 'free',
+    subcategory: 'freeresearch',
+    tags: ['Free Cloud GPU', 'Deep Learning', 'ML Research'],
+    rating: 4.8
+  },
+  {
+    id: 'free-deepnote',
+    title: 'Deepnote AI Data Notebooks',
+    description: 'Collaborative AI data science notebook platform with free cloud compute, SQL integrations, and interactive reactive Python cells.',
+    url: 'https://deepnote.com',
+    category: 'free',
+    subcategory: 'freeresearch',
+    tags: ['Collaborative Notebook', 'Python AI', 'Free Compute'],
+    rating: 4.7
+  },
+  {
+    id: 'free-replicate',
+    title: 'Replicate Free Model Inference',
+    description: 'Run and fine-tune open-source AI models (Llama 3, SDXL, Whisper) in the cloud via cloud API endpoints with free starter credits.',
+    url: 'https://replicate.com',
+    category: 'free',
+    subcategory: 'freeresearch',
+    tags: ['Model Inference', 'Cloud API', 'Open Source AI'],
+    rating: 4.8
+  },
+  {
+    id: 'free-kaggle-datasets',
+    title: 'Kaggle Open Datasets Hub',
+    description: 'World\'s largest free repository of 300,000+ public machine learning datasets, clean CSVs, image datasets, and pre-trained AI models.',
+    url: 'https://www.kaggle.com/datasets',
+    category: 'free',
+    subcategory: 'freeresearch',
+    tags: ['300k+ Free Datasets', 'ML Benchmark', 'Kaggle'],
+    rating: 4.9
   },
 
   // --- Free Domains & SSL ---

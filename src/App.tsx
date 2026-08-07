@@ -116,6 +116,7 @@ export default function App() {
       return [
         { id: 'all', name: 'All Resources' },
         { id: 'freeassets', name: 'Free UI Assets' },
+        { id: 'freeresearch', name: 'Free AI & Research' },
         { id: 'database', name: 'Free Databases' },
         { id: 'hosting', name: 'Free Hosting' },
         { id: 'coding', name: 'AI Coding' },
