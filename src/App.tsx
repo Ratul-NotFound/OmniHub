@@ -288,17 +288,30 @@ export default function App() {
             </div>
           ) : (
             <div className={styles.emptyState}>
-              <div className={styles.emptyStateIcon}>🔍</div>
-              <h3>No resources found</h3>
-              <p>Try refining your search query or choosing another category.</p>
-              {searchQuery && (
+              <div className={styles.emptyStateIcon}>
+                {showBookmarksOnly ? '🔖' : '🔍'}
+              </div>
+              <h3>{showBookmarksOnly ? 'No Bookmarked Resources Yet' : 'No resources found'}</h3>
+              <p>
+                {showBookmarksOnly 
+                  ? 'Click the bookmark icon on any card to save your favorite tools and libraries here for quick access!' 
+                  : 'Try refining your search query or choosing another category.'}
+              </p>
+              {showBookmarksOnly ? (
+                <button 
+                  onClick={() => setShowBookmarksOnly(false)}
+                  className={styles.resetSearchBtn}
+                >
+                  Explore All Resources
+                </button>
+              ) : searchQuery ? (
                 <button 
                   onClick={() => setSearchQuery('')}
                   className={styles.resetSearchBtn}
                 >
                   Clear Search Filter
                 </button>
-              )}
+              ) : null}
             </div>
           )}
         </main>
