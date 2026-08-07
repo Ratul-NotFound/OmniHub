@@ -20,7 +20,7 @@
 .gridCard {
   padding: 0.85rem 0.95rem;
   min-height: 104px;
-  gap: 0.65rem;
+  gap: 0.75rem;
 }
 
 /* List View Card */
@@ -28,14 +28,14 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 0.7rem 1rem;
+  padding: 0.75rem 1rem;
   gap: 1.1rem;
 }
 
 /* Header Row */
 .header {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 0.65rem;
   width: 100%;
 }
@@ -57,6 +57,7 @@
   flex-shrink: 0;
   overflow: hidden;
   border: 1px solid var(--border-color);
+  margin-top: 0.05rem;
 }
 
 .favicon {
@@ -79,7 +80,7 @@
 .titleArea {
   display: flex;
   flex-direction: column;
-  gap: 0.15rem;
+  gap: 0.2rem;
   min-width: 0;
   flex: 1;
 }
@@ -87,19 +88,19 @@
 .titleLine {
   display: flex;
   align-items: center;
-  gap: 0.4rem;
+  flex-wrap: wrap;
+  gap: 0.35rem;
   min-width: 0;
 }
 
 .title {
   font-family: var(--font-sans);
-  font-size: 0.9rem;
+  font-size: 0.875rem;
   font-weight: 700;
   color: var(--text-primary);
-  line-height: 1.2;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  line-height: 1.25;
+  white-space: normal;
+  word-break: break-word;
   letter-spacing: -0.01em;
 }
 
