@@ -1,32 +1,12 @@
 .card {
   position: relative;
   display: flex;
-  overflow: hidden;
+  flex-direction: column;
+  justify-content: space-between;
   border-radius: var(--radius-md);
   background-color: var(--bg-secondary);
   border: 1px solid var(--border-color);
   transition: all var(--transition-fast);
-}
-
-.gridCard {
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 200px;
-  padding: 1.25rem;
-}
-
-.listCard {
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.85rem 1.25rem;
-  width: 100%;
-  gap: 1.5rem;
-}
-
-/* Remove Background Glow for Raw Coded Style */
-.glowBg {
-  display: none;
 }
 
 .card:hover {
@@ -34,29 +14,39 @@
   background-color: var(--bg-tertiary);
 }
 
-/* Card Content Area */
-.content {
-  z-index: 1;
-  flex: 1;
+/* Grid View Card */
+.gridCard {
+  padding: 0.85rem 0.95rem;
+  min-height: 150px;
+  gap: 0.6rem;
 }
 
+/* List View Card */
+.listCard {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  gap: 1.25rem;
+}
+
+/* Header Row */
 .header {
   display: flex;
-  align-items: flex-start;
-  gap: 0.75rem;
-  margin-bottom: 0.75rem;
+  align-items: center;
+  gap: 0.65rem;
+  width: 100%;
 }
 
 .listCard .header {
-  margin-bottom: 0;
-  flex: 0 0 220px;
+  flex: 0 0 240px;
 }
 
-/* Avatar / Favicon Container (Raw square format) */
+/* Favicon Avatar */
 .avatar {
   position: relative;
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
   border-radius: var(--radius-sm);
   background-color: var(--bg-primary);
   display: flex;
@@ -68,8 +58,8 @@
 }
 
 .favicon {
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
   object-fit: contain;
   z-index: 2;
 }
@@ -77,56 +67,71 @@
 .fallbackLetter {
   position: absolute;
   font-family: var(--font-mono);
-  font-weight: 600;
-  font-size: 0.95rem;
+  font-weight: 700;
+  font-size: 0.8rem;
   color: var(--text-primary);
   z-index: 1;
 }
 
-.titleInfo {
+/* Title & Domain Area */
+.titleArea {
   display: flex;
   flex-direction: column;
-  gap: 0.1rem;
+  gap: 0.05rem;
+  min-width: 0;
   flex: 1;
 }
 
-.titleRow {
+.titleLine {
   display: flex;
   align-items: center;
-  gap: 0.4rem;
-  flex-wrap: wrap;
+  gap: 0.35rem;
+  min-width: 0;
 }
 
 .title {
   font-family: var(--font-sans);
-  font-size: 0.95rem;
+  font-size: 0.875rem;
   font-weight: 600;
   color: var(--text-primary);
-  line-height: 1.3;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .domain {
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: 0.675rem;
   color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-/* Hot Badge (Minimalist) */
+/* Hot Badge */
 .hotBadge {
   display: inline-flex;
   align-items: center;
-  gap: 0.15rem;
   background-color: var(--border-color);
   color: var(--accent-danger);
   border: 1px solid var(--border-hover);
   font-size: 0.55rem;
+  font-family: var(--font-mono);
   font-weight: 700;
-  padding: 0.05rem 0.3rem;
+  padding: 0.05rem 0.25rem;
   border-radius: var(--radius-sm);
-  letter-spacing: 0.02em;
+  flex-shrink: 0;
 }
 
-/* Rating Badge */
+/* Header Actions (Rating & Bookmark) */
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-shrink: 0;
+}
+
 .ratingBadge {
   display: flex;
   align-items: center;
@@ -134,91 +139,29 @@
   background-color: var(--bg-primary);
   border: 1px solid var(--border-color);
   color: var(--accent-amber);
-  padding: 0.15rem 0.4rem;
+  padding: 0.1rem 0.35rem;
   border-radius: var(--radius-sm);
-  font-size: 0.7rem;
-  font-weight: 600;
-  flex-shrink: 0;
-}
-
-.starIcon {
-  color: var(--accent-amber);
-}
-
-/* Description text */
-.description {
-  font-size: 0.825rem;
-  color: var(--text-secondary);
-  line-height: 1.4;
-  margin-bottom: 1rem;
-}
-
-.listCard .description {
-  margin-bottom: 0;
-  padding: 0 0.5rem;
-}
-
-/* Tags Container */
-.tagsContainer {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.3rem;
-}
-
-.listCard .tagsContainer {
-  display: none;
-}
-
-.tag {
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: 0.675rem;
+  font-weight: 600;
+}
+
+/* Icon Buttons (Share & Bookmark) */
+.iconBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: var(--radius-sm);
   color: var(--text-secondary);
   background-color: var(--bg-primary);
   border: 1px solid var(--border-color);
-  padding: 0.1rem 0.4rem;
-  border-radius: var(--radius-sm);
   transition: all var(--transition-fast);
   cursor: pointer;
 }
 
-.tag:hover {
-  color: var(--text-primary);
-  border-color: var(--border-hover);
-}
-
-/* Actions Section */
-.actions {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  z-index: 1;
-}
-
-.gridCard .actions {
-  margin-top: 1rem;
-  border-top: 1px solid var(--border-color);
-  padding-top: 0.75rem;
-}
-
-.listCard .actions {
-  flex-shrink: 0;
-}
-
-.actionBtn {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 30px;
-  height: 30px;
-  border-radius: var(--radius-sm);
-  color: var(--text-secondary);
-  background-color: var(--bg-primary);
-  border: 1px solid var(--border-color);
-  transition: all var(--transition-fast);
-}
-
-.actionBtn:hover {
+.iconBtn:hover {
   color: var(--text-primary);
   border-color: var(--border-hover);
 }
@@ -233,40 +176,93 @@
   border-color: var(--accent-success) !important;
 }
 
-.checkIcon {
-  animation: none;
+/* Description */
+.description {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.35;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-/* Copied Tooltip (Flat monochrome) */
-.copiedTooltip {
-  position: absolute;
-  bottom: 125%;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: var(--bg-primary);
-  border: 1px solid var(--accent-success);
-  color: var(--accent-success);
+.listCard .description {
+  flex: 1;
+  -webkit-line-clamp: 1;
+}
+
+/* Footer Row */
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.listCard .footer {
+  border-top: none;
+  padding-top: 0;
+  flex-shrink: 0;
+}
+
+/* Tags Row */
+.tagsRow {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.listCard .tagsRow {
+  display: none;
+}
+
+.tag {
   font-family: var(--font-mono);
   font-size: 0.65rem;
-  font-weight: 600;
-  padding: 0.15rem 0.35rem;
+  color: var(--text-secondary);
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  padding: 0.05rem 0.3rem;
   border-radius: var(--radius-sm);
-  pointer-events: none;
+  transition: all var(--transition-fast);
+  cursor: pointer;
   white-space: nowrap;
 }
 
-/* Visit Site Button (Raw border button) */
+.tag:hover {
+  color: var(--text-primary);
+  border-color: var(--border-hover);
+}
+
+/* Buttons Row */
+.btnRow {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+/* Visit Button */
 .visitBtn {
   display: inline-flex;
   align-items: center;
-  gap: 0.3rem;
+  gap: 0.25rem;
   background-color: var(--bg-primary);
   color: var(--text-primary);
   border: 1px solid var(--border-color);
-  padding: 0 0.65rem;
-  height: 30px;
+  padding: 0 0.55rem;
+  height: 26px;
   border-radius: var(--radius-sm);
-  font-size: 0.8rem;
+  font-family: var(--font-mono);
+  font-size: 0.725rem;
   font-weight: 600;
   transition: all var(--transition-fast);
 }
@@ -277,44 +273,25 @@
   border-color: var(--text-primary);
 }
 
-/* Responsive Overrides */
+/* Mobile responsive */
 @media (max-width: 768px) {
   .listCard {
     flex-direction: column;
     align-items: stretch;
-    gap: 0.75rem;
-    padding: 1rem;
+    gap: 0.6rem;
+    padding: 0.85rem;
   }
 
   .listCard .header {
     flex: none;
   }
 
-  .listCard .description {
-    padding: 0;
-  }
-
-  .listCard .tagsContainer {
+  .listCard .tagsRow {
     display: flex;
-    margin-top: 0.5rem;
   }
 
-  .listCard .actions {
+  .listCard .footer {
     border-top: 1px solid var(--border-color);
     padding-top: 0.5rem;
-    margin-top: 0.25rem;
-    justify-content: flex-start;
-  }
-}
-
-@media (max-width: 480px) {
-  .visitText {
-    display: none;
-  }
-
-  .visitBtn {
-    padding: 0;
-    width: 30px;
-    justify-content: center;
   }
 }
