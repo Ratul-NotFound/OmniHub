@@ -68,9 +68,9 @@ export const CATEGORIES: Category[] = [
   },
   {
     id: 'utilities',
-    name: 'Developer Utilities',
+    name: 'Online Dev Tools & Testing',
     iconName: 'Wrench',
-    description: 'Web tools, bundle analyzers, formatting helpers, and test tools'
+    description: 'Standalone web tools to test APIs, format JSON, inspect bundle sizes, and generate favicons'
   }
 ];
 
