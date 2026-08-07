@@ -108,6 +108,7 @@ export const REPO_SUBCATEGORIES: Subcategory[] = [
 
 export const AI_SUBCATEGORIES: Subcategory[] = [
   { id: 'all', name: 'All AI Tools' },
+  { id: 'mcpskills', name: 'MCP Servers & Agent Skills' },
   { id: 'llm', name: 'LLMs & Chat' },
   { id: 'coding', name: 'AI Coding' },
   { id: 'slides', name: 'Slides & Presentations' },
@@ -144,6 +145,278 @@ export const LIBRARY_SUBCATEGORIES: Subcategory[] = [
 
 export const RESOURCES: Resource[] = [
   // ================= AI TOOLS =================
+  
+  // --- MCP Servers & AI Agent Skills ---
+  {
+    id: 'mcp-context7',
+    title: 'Context7 (MCP Server)',
+    description: 'Real-time web browsing and Google search MCP server for Claude Code, Antigravity AI, and Cursor agents.',
+    url: 'https://github.com/upstash/mcp-server-context7',
+    category: 'ai',
+    subcategory: 'mcpskills',
+    subcategories: ['mcpskills', 'coding'],
+    tags: ['mcp', 'claude code', 'antigravity', 'agent skill', 'web search'],
+    rating: 4.9,
+    isHot: true,
+    useCases: [
+      'Give AI agents real-time web browsing and documentation search',
+      'Look up updated API docs during autonomous pair programming'
+    ],
+    features: [
+      'Model Context Protocol compliant',
+      'JavaScript-enabled browser scraping for LLM context',
+      'Works with Claude Code CLI and Antigravity AI'
+    ],
+    freeTierDetails: '100% Free Open Source'
+  },
+  {
+    id: 'mcp-github',
+    title: 'GitHub MCP Server',
+    description: 'Official Model Context Protocol server enabling Claude Code, Cursor, and Antigravity agents to inspect codebases, manage PRs, and review issues.',
+    url: 'https://github.com/modelcontextprotocol/servers/tree/main/src/github',
+    category: 'ai',
+    subcategory: 'mcpskills',
+    subcategories: ['mcpskills', 'coding'],
+    tags: ['mcp', 'github', 'claude code', 'code review', 'agent skill'],
+    rating: 5.0,
+    isHot: true,
+    useCases: [
+      'Automated pull request creation and code review by AI agents',
+      'Searching GitHub issues and commits directly via agent prompt'
+    ],
+    features: [
+      'Official Anthropic Model Context Protocol server',
+      'Supports PR inline comments, repository search, and issue triage',
+      'Seamless OAuth integration with GitHub API'
+    ],
+    freeTierDetails: '100% Free Open Source'
+  },
+  {
+    id: 'mcp-postgres',
+    title: 'PostgreSQL MCP Server',
+    description: 'Database inspection and query execution MCP server for LLM coding agents to analyze schemas and run migrations.',
+    url: 'https://github.com/modelcontextprotocol/servers/tree/main/src/postgres',
+    category: 'ai',
+    subcategory: 'mcpskills',
+    subcategories: ['mcpskills', 'coding'],
+    tags: ['mcp', 'postgres', 'database', 'sql', 'agent skill'],
+    rating: 4.9,
+    isHot: true,
+    useCases: [
+      'Allow AI agents to inspect DB tables and write SQL queries safely',
+      'Automated database migration verification during development'
+    ],
+    features: [
+      'Read-only safety modes for production DB protection',
+      'Supports schema introspection, table inspection, and EXPLAIN query analysis'
+    ],
+    freeTierDetails: '100% Free Open Source'
+  },
+  {
+    id: 'mcp-puppeteer',
+    title: 'Puppeteer / Playwright MCP Server',
+    description: 'Browser automation and E2E visual testing MCP server for AI agents to interact with web apps, take screenshots, and click elements.',
+    url: 'https://github.com/modelcontextprotocol/servers/tree/main/src/puppeteer',
+    category: 'ai',
+    subcategory: 'mcpskills',
+    subcategories: ['mcpskills', 'coding'],
+    tags: ['mcp', 'puppeteer', 'playwright', 'e2e testing', 'agent skill'],
+    rating: 4.8,
+    isHot: true,
+    useCases: [
+      'Allow AI coding agents to visually test UI layouts and click workflows',
+      'Automated screenshot verification for web app changes'
+    ],
+    features: [
+      'Full headless Chrome automation via MCP protocol',
+      'DOM element clicking, text typing, and full-page visual capture'
+    ],
+    freeTierDetails: '100% Free Open Source'
+  },
+  {
+    id: 'mcp-brave-search',
+    title: 'Brave Search MCP Server',
+    description: 'Privacy-focused live web and news search MCP server giving AI agents current web information without API tracking.',
+    url: 'https://github.com/modelcontextprotocol/servers/tree/main/src/bravesearch',
+    category: 'ai',
+    subcategory: 'mcpskills',
+    subcategories: ['mcpskills', 'coding'],
+    tags: ['mcp', 'brave search', 'agent skill', 'web search'],
+    rating: 4.8,
+    useCases: [
+      'Real-time web search for Claude Code and Cursor agents',
+      'Researching new library releases and bug solutions'
+    ],
+    features: [
+      'Fast JSON search responses tailored for LLMs',
+      'Supports web search and local site indexing'
+    ],
+    freeTierDetails: 'Free Tier Available (2,000 queries/month)'
+  },
+  {
+    id: 'mcp-filesystem',
+    title: 'Filesystem MCP Server',
+    description: 'Secure local filesystem access MCP server providing AI agents with granular file reading, searching, and editing capabilities.',
+    url: 'https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem',
+    category: 'ai',
+    subcategory: 'mcpskills',
+    subcategories: ['mcpskills', 'coding'],
+    tags: ['mcp', 'filesystem', 'local dev', 'agent skill'],
+    rating: 4.9,
+    useCases: [
+      'Granting AI agents scoped access to local project files',
+      'Searching multi-directory repositories with fast ripgrep'
+    ],
+    features: [
+      'Directory scoping for strict workspace safety',
+      'File viewing, line range reading, and multi-file editing'
+    ],
+    freeTierDetails: '100% Free Open Source'
+  },
+  {
+    id: 'mcp-sentry',
+    title: 'Sentry Error Monitor MCP',
+    description: 'Connects AI coding agents directly to Sentry production crash logs to automatically triage stack traces and write bug fixes.',
+    url: 'https://github.com/modelcontextprotocol/servers/tree/main/src/sentry',
+    category: 'ai',
+    subcategory: 'mcpskills',
+    subcategories: ['mcpskills', 'coding'],
+    tags: ['mcp', 'sentry', 'debugging', 'error monitoring', 'agent skill'],
+    rating: 4.9,
+    isHot: true,
+    useCases: [
+      'Automated bug fixing from live Sentry stack traces',
+      'Investigating production errors via agent prompt'
+    ],
+    features: [
+      'Inspect error tracebacks, user context, and affected release tags',
+      'Allows agent to locate line numbers in codebase directly'
+    ],
+    freeTierDetails: '100% Free Open Source'
+  },
+  {
+    id: 'mcp-memory',
+    title: 'Memory & Knowledge Graph MCP',
+    description: 'Persistent long-term graph memory MCP server allowing AI agents to retain architectural decisions and user preferences across chat sessions.',
+    url: 'https://github.com/modelcontextprotocol/servers/tree/main/src/memory',
+    category: 'ai',
+    subcategory: 'mcpskills',
+    subcategories: ['mcpskills', 'coding'],
+    tags: ['mcp', 'memory', 'knowledge graph', 'agent memory', 'agent skill'],
+    rating: 4.9,
+    isHot: true,
+    useCases: [
+      'Persistent memory for Claude Code, Antigravity, and Cursor agents',
+      'Storing project architecture conventions across different projects'
+    ],
+    features: [
+      'Entity-relation knowledge graph storage',
+      'Semantic recall and memory persistence'
+    ],
+    freeTierDetails: '100% Free Open Source'
+  },
+  {
+    id: 'mcp-slack',
+    title: 'Slack MCP Server',
+    description: 'Allows AI coding agents to post progress reports, ask developer questions, and notify teams in Slack channels.',
+    url: 'https://github.com/modelcontextprotocol/servers/tree/main/src/slack',
+    category: 'ai',
+    subcategory: 'mcpskills',
+    subcategories: ['mcpskills', 'coding'],
+    tags: ['mcp', 'slack', 'notifications', 'collaboration', 'agent skill'],
+    rating: 4.7,
+    useCases: [
+      'Automated build and test status updates posted to Slack channels',
+      'AI agents asking human devs for code review approval'
+    ],
+    features: [
+      'Send channel messages, read threads, and upload build logs'
+    ],
+    freeTierDetails: '100% Free Open Source'
+  },
+  {
+    id: 'mcp-figma',
+    title: 'Figma Context MCP',
+    description: 'MCP server that extracts design tokens, component hierarchies, and layout geometry from Figma frames directly into code generator agents.',
+    url: 'https://github.com/glama-ai/figma-mcp-server',
+    category: 'ai',
+    subcategory: 'mcpskills',
+    subcategories: ['mcpskills', 'uiux'],
+    tags: ['mcp', 'figma', 'design to code', 'agent skill'],
+    rating: 4.9,
+    isHot: true,
+    useCases: [
+      'Convert Figma design node trees straight into Tailwind / React components',
+      'Extract design tokens (colors, padding, font weights) for AI agents'
+    ],
+    features: [
+      'Figma REST API integration with LLM-optimized JSON output',
+      'Preserves layout bounds and nested component structures'
+    ],
+    freeTierDetails: '100% Free Open Source'
+  },
+  {
+    id: 'mcp-docker',
+    title: 'Docker Management MCP',
+    description: 'Container management MCP server enabling AI agents to inspect running containers, view logs, and start dev services.',
+    url: 'https://github.com/mcp-servers/docker-mcp',
+    category: 'ai',
+    subcategory: 'mcpskills',
+    subcategories: ['mcpskills', 'coding'],
+    tags: ['mcp', 'docker', 'devops', 'containers', 'agent skill'],
+    rating: 4.8,
+    useCases: [
+      'Allow AI agents to launch local database containers automatically',
+      'Inspect container build logs during debugging'
+    ],
+    features: [
+      'Docker Engine API integration',
+      'Container lifecycle control (start, stop, logs, inspect)'
+    ],
+    freeTierDetails: '100% Free Open Source'
+  },
+  {
+    id: 'claude-code-skills',
+    title: 'Claude Code Agent Skills Toolkit',
+    description: 'Anthropic official skill extensions and CLI workflow plugins for Claude Code agentic coding.',
+    url: 'https://github.com/anthropics/claude-code',
+    category: 'ai',
+    subcategory: 'mcpskills',
+    subcategories: ['mcpskills', 'coding'],
+    tags: ['claude code', 'agent skills', 'anthropic', 'cli agent'],
+    rating: 5.0,
+    isHot: true,
+    useCases: [
+      'Autonomous terminal command execution and file refactoring',
+      'Subagent orchestration and background task execution'
+    ],
+    features: [
+      'Native MCP server registration',
+      'Custom tool definitions and agentic loops'
+    ],
+    freeTierDetails: '100% Free Open Source'
+  },
+  {
+    id: 'antigravity-agent-skills',
+    title: 'Antigravity AI Agent Skills Framework',
+    description: 'Google Deepmind paired pair-programming agent skills framework supporting task scheduling, background execution, and multi-subagent orchestration.',
+    url: 'https://deepmind.google/technologies/antigravity',
+    category: 'ai',
+    subcategory: 'mcpskills',
+    subcategories: ['mcpskills', 'coding'],
+    tags: ['antigravity', 'agent skills', 'deepmind', 'pair programming'],
+    rating: 5.0,
+    isHot: true,
+    useCases: [
+      'Multi-subagent delegation and autonomous code refactoring',
+      'Background execution timers and reactive wakeup messaging'
+    ],
+    features: [
+      'Background task execution, schedule timers, subagent inheritance',
+      'Full local codebase view and multi-file replacement engine'
+    ],
+    freeTierDetails: '100% Free Open Source'
+  },
   
   // --- LLMs & Chat ---
   {

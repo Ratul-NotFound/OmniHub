@@ -90,6 +90,7 @@ export default function App() {
     if (activeCategory === 'all') {
       return [
         { id: 'all', name: 'All Resources' },
+        { id: 'mcpskills', name: 'MCP Servers & Agent Skills' },
         { id: 'uicomponents', name: 'Copy-Paste UI Components' },
         { id: 'freeassets', name: 'Free UI Assets & Fonts' },
         { id: 'styling', name: 'CSS & Motion' },
