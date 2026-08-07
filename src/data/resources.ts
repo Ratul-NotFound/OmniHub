@@ -1442,6 +1442,73 @@ export const RESOURCES: Resource[] = [
     tags: ['Free Stock Photos', 'High Resolution', 'Commercial Free'],
     rating: 4.8
   },
+  {
+    id: 'free-tailwind-animated',
+    title: 'Tailwind CSS Animated',
+    description: 'Free open-source Tailwind CSS plugin featuring ready-to-use keyframe animations for fade, zoom, spin, bounce, and pulse effects.',
+    url: 'https://www.tailwindcss-animated.com/',
+    category: 'free',
+    subcategory: 'freeassets',
+    subcategories: ['freeassets', 'libraries'],
+    tags: ['Free UI Plugin', 'Tailwind CSS', 'Keyframe Animations'],
+    isHot: true,
+    rating: 4.9
+  },
+  {
+    id: 'free-css-buttons',
+    title: 'CSS Buttons Examples',
+    description: 'Over 90+ free copy-paste CSS button styles from famous websites like Stripe, GitHub, Vercel, and Apple.',
+    url: 'https://getcssscan.com/css-buttons-examples',
+    category: 'free',
+    subcategory: 'freeassets',
+    tags: ['Copy-Paste CSS', 'Button Styles', 'Free Elements'],
+    isHot: true,
+    rating: 4.8
+  },
+  {
+    id: 'free-glassmorphism',
+    title: 'Glassmorphism CSS Generator',
+    description: 'Free interactive CSS glassmorphism generator to copy-paste frosted glass background blur and border styles.',
+    url: 'https://glassmorphism.com/',
+    category: 'free',
+    subcategory: 'freeassets',
+    subcategories: ['freeassets', 'design'],
+    tags: ['Glassmorphism', 'CSS Generator', 'UI Design'],
+    rating: 4.8
+  },
+  {
+    id: 'free-lottiefiles',
+    title: 'LottieFiles Free Animations',
+    description: '100,000+ free lightweight Lottie vector animations for web, React, iOS, and Android landing page micro-interactions.',
+    url: 'https://lottiefiles.com/free-animations',
+    category: 'free',
+    subcategory: 'freeassets',
+    tags: ['Lottie', 'Vector Animations', 'Micro Interactions'],
+    isHot: true,
+    rating: 4.9
+  },
+  {
+    id: 'free-headless-ui',
+    title: 'Headless UI Primitives',
+    description: 'Completely unstyled, fully accessible UI components by Tailwind Labs designed to integrate seamlessly with Tailwind CSS.',
+    url: 'https://headlessui.com/',
+    category: 'free',
+    subcategory: 'freeassets',
+    subcategories: ['freeassets', 'libraries'],
+    tags: ['Unstyled UI', 'Tailwind Labs', 'Accessible Components'],
+    rating: 4.8
+  },
+  {
+    id: 'free-radix-ui',
+    title: 'Radix UI Primitives',
+    description: 'Unstyled, accessible component primitives for building high-quality design systems and React web applications.',
+    url: 'https://www.radix-ui.com/',
+    category: 'free',
+    subcategory: 'freeassets',
+    subcategories: ['freeassets', 'libraries'],
+    tags: ['Accessible Primitives', 'React', 'Design Systems'],
+    rating: 4.9
+  },
 
   // --- Free Headless CMS ---
   {

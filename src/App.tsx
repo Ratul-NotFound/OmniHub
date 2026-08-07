@@ -129,14 +129,33 @@ export default function App() {
     if (activeCategory === 'libraries') {
       return [
         { id: 'all', name: 'All Libraries' },
-        { id: 'freeassets', name: 'UI & Animation Libraries' }
+        { id: 'freeassets', name: 'UI & Animation Libraries' },
+        { id: 'frameworks', name: 'Web Frameworks' }
       ];
     }
     if (activeCategory === 'design') {
       return [
         { id: 'all', name: 'All Design' },
-        { id: 'freeassets', name: 'Icons & Vectors' },
-        { id: 'uiux', name: 'UI/UX Tools' }
+        { id: 'freeassets', name: 'Icons & Vector Assets' },
+        { id: 'uiux', name: 'Design Tools' }
+      ];
+    }
+    if (activeCategory === 'websites') {
+      return [
+        { id: 'all', name: 'All Dev Hubs' },
+        { id: 'devhubs', name: 'Communities & News' }
+      ];
+    }
+    if (activeCategory === 'learning') {
+      return [
+        { id: 'all', name: 'All Learning' },
+        { id: 'docs', name: 'Docs & Guides' }
+      ];
+    }
+    if (activeCategory === 'utilities') {
+      return [
+        { id: 'all', name: 'All Utilities' },
+        { id: 'freedev', name: 'Dev Tools & Utilities' }
       ];
     }
     return [];
