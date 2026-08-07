@@ -1409,6 +1409,16 @@ export const RESOURCES: Resource[] = [
     rating: 4.9
   },
   {
+    id: 'reactbits',
+    title: 'React Bits',
+    description: 'An open-source collection of high-quality, animated, interactive & fully customizable React components for building stunning user interfaces.',
+    url: 'https://reactbits.dev',
+    category: 'libraries',
+    tags: ['React Components', 'Animated UI', 'Framer Motion', 'Interactive'],
+    isHot: true,
+    rating: 4.9
+  },
+  {
     id: 'nextjs',
     title: 'Next.js',
     description: 'The React Framework for the Web. Used by some of the world\'s largest companies, enabling hybrid static & server rendering.',
