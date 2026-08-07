@@ -53,6 +53,16 @@ export const ResourceCard: React.FC<ResourceCardProps> = ({
     }
   };
 
+  // Generate harmonious avatar hue from resource title
+  const getAvatarColor = (name: string) => {
+    let hash = 0;
+    for (let i = 0; i < name.length; i++) {
+      hash = name.charCodeAt(i) + ((hash << 5) - hash);
+    }
+    const hue = Math.abs(hash % 360);
+    return `hsl(${hue}, 50%, 20%)`;
+  };
+
   const domain = getDomain(resource.url);
   const isListView = viewMode === 'list';
 
@@ -64,18 +74,23 @@ export const ResourceCard: React.FC<ResourceCardProps> = ({
     `}>
       {/* Header Section */}
       <div className={styles.header}>
-        <div className={styles.avatar}>
-          {!imgError && (
+        <div 
+          className={styles.avatar}
+          style={imgError ? { backgroundColor: getAvatarColor(resource.title), borderColor: 'var(--border-hover)' } : undefined}
+        >
+          {!imgError ? (
             <img 
-              src={`https://www.google.com/s2/favicons?sz=64&domain=${domain}`} 
+              src={`https://icons.duckduckgo.com/ip3/${domain}.ico`} 
               alt=""
               onError={() => setImgError(true)}
               className={styles.favicon}
+              loading="lazy"
             />
+          ) : (
+            <span className={styles.fallbackLetter}>
+              {resource.title.charAt(0).toUpperCase()}
+            </span>
           )}
-          <span className={styles.fallbackLetter}>
-            {resource.title.charAt(0).toUpperCase()}
-          </span>
         </div>
 
         <div className={styles.titleArea}>
