@@ -97,9 +97,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
 
         {/* Brand/Logo Section */}
         <div className={styles.logoSection}>
-          <div className={styles.logoIcon}>
-            <span className={styles.logoGradientIcon}>O</span>
-          </div>
+          <img src="/logo.svg" alt="OmniHub Logo" className={styles.logoImg} />
           {!isCollapsed && (
             <div className={styles.logoText}>
               <h1 className="glow-text">OmniHub</h1>

@@ -53,22 +53,18 @@
   overflow: hidden;
 }
 
-.logoIcon {
+.logoImg {
   width: 32px;
   height: 32px;
   border-radius: var(--radius-sm);
-  background-color: var(--text-primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  border: 1px solid var(--border-color);
   flex-shrink: 0;
+  object-fit: contain;
+  transition: border-color var(--transition-fast);
 }
 
-.logoGradientIcon {
-  color: var(--bg-primary);
-  font-family: var(--font-mono);
-  font-weight: 700;
-  font-size: 1rem;
+.logoSection:hover .logoImg {
+  border-color: var(--border-hover);
 }
 
 .logoText {
