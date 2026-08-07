@@ -227,6 +227,17 @@
   color: var(--text-primary);
 }
 
+.authorLink {
+  color: var(--primary);
+  font-weight: 600;
+  transition: color var(--transition-fast);
+}
+
+.authorLink:hover {
+  color: var(--primary-hover);
+  text-decoration: underline;
+}
+
 .collapsedFooterIcon {
   display: flex;
   justify-content: center;

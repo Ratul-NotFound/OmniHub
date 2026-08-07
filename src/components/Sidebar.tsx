@@ -168,9 +168,21 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 <strong>{totalCount}</strong>
               </div>
               <div className={styles.statRow}>
+                <span>Created By</span>
+                <a 
+                  href="https://mh-ratul.vercel.app/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className={styles.authorLink}
+                  title="Visit Ratul's Portfolio"
+                >
+                  Ratul ↗
+                </a>
+              </div>
+              <div className={styles.statRow}>
                 <span>Source</span>
                 <a 
-                  href="https://github.com" 
+                  href="https://github.com/Ratul-NotFound/OmniHub" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className={styles.gitLink}
