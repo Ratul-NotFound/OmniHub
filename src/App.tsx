@@ -4,7 +4,6 @@ import { Header } from './components/Header';
 import { ResourceCard } from './components/ResourceCard';
 import { SubmitModal } from './components/SubmitModal';
 import { ResourceDetailModal } from './components/ResourceDetailModal';
-import { AdminModal } from './components/AdminModal';
 import { RESOURCES, AI_SUBCATEGORIES, FREE_SUBCATEGORIES, LIBRARY_SUBCATEGORIES, REPO_SUBCATEGORIES, AUTOMATION_SUBCATEGORIES } from './data/resources';
 import type { Resource } from './data/resources';
 import styles from './App.module.css';
@@ -33,20 +32,9 @@ export default function App() {
     setActiveSubcategory('all'); // Reset subcategory search filters
   };
 
-  // Modal suggestions & Admin states
+  // Modal suggestions states
   const [isSubmitOpen, setIsSubmitOpen] = useState(false);
-  const [isAdminOpen, setIsAdminOpen] = useState(false);
   const [selectedResourceDetails, setSelectedResourceDetails] = useState<Resource | null>(null);
-
-  // Pending moderation queue (stored in localStorage)
-  const [pendingResources, setPendingResources] = useState<Resource[]>(() => {
-    try {
-      const saved = localStorage.getItem('pending_suggestions');
-      return saved ? JSON.parse(saved) : [];
-    } catch {
-      return [];
-    }
-  });
 
   // Bookmarks state (ids stored in localStorage)
   const [bookmarks, setBookmarks] = useState<string[]>(() => {
@@ -59,7 +47,7 @@ export default function App() {
   });
 
   // Resources state (default list + custom suggestions from localStorage)
-  const [resources, setResources] = useState<Resource[]>(() => {
+  const [resources] = useState<Resource[]>(() => {
     try {
       const savedCustom = localStorage.getItem('custom_resources');
       const customItems: Resource[] = savedCustom ? JSON.parse(savedCustom) : [];
@@ -87,61 +75,9 @@ export default function App() {
     );
   };
 
-  // Sync pending suggestions to localStorage
-  useEffect(() => {
-    localStorage.setItem('pending_suggestions', JSON.stringify(pendingResources));
-  }, [pendingResources]);
-
-  // User submits a suggestion -> goes to Admin Moderation Queue
-  const handleSubmitSuccess = (newResource: {
-    title: string;
-    url: string;
-    category: any;
-    tags: string[];
-    description: string;
-  }) => {
-    const formattedResource: Resource = {
-      id: `custom_${Date.now()}`,
-      title: newResource.title,
-      description: newResource.description,
-      url: newResource.url,
-      category: newResource.category,
-      tags: newResource.tags,
-      rating: 5.0,
-      isHot: true
-    };
-
-    setPendingResources(prev => [formattedResource, ...prev]);
-  };
-
-  // Admin approves a pending submission -> publishes live to site!
-  const handleApprovePending = (id: string) => {
-    const target = pendingResources.find(r => r.id === id);
-    if (!target) return;
-
-    // Move to live published list
-    setResources(prev => [target, ...prev]);
-    setPendingResources(prev => prev.filter(r => r.id !== id));
-
-    // Save to published custom resources
-    try {
-      const savedCustom = localStorage.getItem('custom_resources');
-      const customItems: Resource[] = savedCustom ? JSON.parse(savedCustom) : [];
-      localStorage.setItem('custom_resources', JSON.stringify([target, ...customItems]));
-    } catch (err) {
-      console.error('Failed to save approved custom resource:', err);
-    }
-  };
-
-  // Admin rejects a pending submission -> deletes from queue
-  const handleRejectPending = (id: string) => {
-    setPendingResources(prev => prev.filter(r => r.id !== id));
-  };
-
   // Direct tag clicking helper
   const handleTagClick = (tag: string) => {
     setSearchQuery(tag);
-    // Focus search input or just trigger search
   };
 
   // Subcategories mapping for categories
@@ -283,10 +219,8 @@ export default function App() {
           viewMode={viewMode}
           setViewMode={setViewMode}
           onOpenSubmitModal={() => setIsSubmitOpen(true)}
-          onOpenAdminModal={() => setIsAdminOpen(true)}
           onOpenMobileMenu={() => setIsOpenMobile(true)}
           resultsCount={filteredResources.length}
-          pendingCount={pendingResources.length}
         />
 
         {/* Content Body */}
@@ -358,7 +292,6 @@ export default function App() {
       <SubmitModal
         isOpen={isSubmitOpen}
         onClose={() => setIsSubmitOpen(false)}
-        onSubmitSuccess={handleSubmitSuccess}
       />
 
       {/* Rich Resource Details Modal Overlay */}
@@ -367,15 +300,6 @@ export default function App() {
         isOpen={!!selectedResourceDetails}
         onClose={() => setSelectedResourceDetails(null)}
         onTagClick={handleTagClick}
-      />
-
-      {/* Admin Moderation Queue Modal Overlay */}
-      <AdminModal
-        isOpen={isAdminOpen}
-        onClose={() => setIsAdminOpen(false)}
-        pendingResources={pendingResources}
-        onApprove={handleApprovePending}
-        onReject={handleRejectPending}
       />
     </div>
   );
