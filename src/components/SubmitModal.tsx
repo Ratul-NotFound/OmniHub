@@ -47,23 +47,22 @@ export const SubmitModal: React.FC<SubmitModalProps> = ({
     setIsSubmitting(true);
 
     try {
-      // Send form payload to Web3Forms email API targeting m.h.ratul18@gmail.com
-      const response = await fetch('https://api.web3forms.com/submit', {
+      // Send form payload to FormSubmit AJAX endpoint targeting m.h.ratul18@gmail.com
+      const response = await fetch('https://formsubmit.co/ajax/m.h.ratul18@gmail.com', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json'
         },
         body: JSON.stringify({
-          access_key: '6d912440-62ca-4c8d-8bf3-0a7e02e1b12b',
-          email: 'm.h.ratul18@gmail.com',
-          subject: `🚀 OmniHub Resource Suggestion: ${title}`,
-          from_name: 'OmniHub Community Submission',
-          title: title,
-          website_url: url,
-          category: category,
-          tags: tagsInput,
-          description: description
+          _subject: `🚀 OmniHub Resource Suggestion: ${title}`,
+          _template: 'table',
+          _captcha: 'false',
+          "Resource Name": title,
+          "Website URL": url,
+          "Category": category,
+          "Tags": tagsInput,
+          "Description": description
         })
       });
 
@@ -75,7 +74,7 @@ export const SubmitModal: React.FC<SubmitModalProps> = ({
         setIsSuccess(true);
       }
     } catch (err) {
-      console.warn('Email webhook delivery handled:', err);
+      console.warn('FormSubmit email webhook delivery handled:', err);
       setIsSuccess(true);
     } finally {
       setIsSubmitting(false);

@@ -42,15 +42,18 @@ export const ResourceCard: React.FC<ResourceCardProps> = ({
     }
   };
 
+  const [imgError, setImgError] = useState(false);
+
   const getDomain = (url: string) => {
     try {
-      const hostname = new URL(url).hostname;
-      return hostname.replace('www.', '');
+      const formatted = url.startsWith('http') ? url : `https://${url}`;
+      return new URL(formatted).hostname.replace(/^www\./, '');
     } catch {
-      return url;
+      return url.replace(/^https?:\/\//, '').replace(/^www\./, '').split('/')[0].split('?')[0];
     }
   };
 
+  const domain = getDomain(resource.url);
   const isListView = viewMode === 'list';
 
   return (
@@ -62,14 +65,14 @@ export const ResourceCard: React.FC<ResourceCardProps> = ({
       {/* Header Section */}
       <div className={styles.header}>
         <div className={styles.avatar}>
-          <img 
-            src={`https://www.google.com/s2/favicons?sz=64&domain=${getDomain(resource.url)}`} 
-            alt=""
-            onError={(e) => {
-              (e.target as HTMLImageElement).style.display = 'none';
-            }}
-            className={styles.favicon}
-          />
+          {!imgError && (
+            <img 
+              src={`https://www.google.com/s2/favicons?sz=64&domain=${domain}`} 
+              alt=""
+              onError={() => setImgError(true)}
+              className={styles.favicon}
+            />
+          )}
           <span className={styles.fallbackLetter}>
             {resource.title.charAt(0).toUpperCase()}
           </span>
