@@ -1213,6 +1213,17 @@ export const RESOURCES: Resource[] = [
 
   // --- Free UI Assets & Fonts ---
   {
+    id: 'free-reactbits',
+    title: 'React Bits Animated UI',
+    description: '100% free open-source collection of animated background effects, text animations, interactive UI components, and copy-paste React code snippets.',
+    url: 'https://reactbits.dev',
+    category: 'free',
+    subcategory: 'freeassets',
+    tags: ['100% Free UI', 'Animated Backgrounds', 'React Components', 'Copy-Paste Code'],
+    isHot: true,
+    rating: 5.0
+  },
+  {
     id: 'free-fontshare',
     title: 'Fontshare Free Fonts',
     description: '100% free for commercial use typography directory featuring professional variable fonts by Indian Type Foundry.',
@@ -1411,12 +1422,13 @@ export const RESOURCES: Resource[] = [
   {
     id: 'reactbits',
     title: 'React Bits',
-    description: 'An open-source collection of high-quality, animated, interactive & fully customizable React components for building stunning user interfaces.',
+    description: '100% free open-source library of pre-built animated background effects, text animations, interactive UI components, and copy-paste React code snippets.',
     url: 'https://reactbits.dev',
     category: 'libraries',
-    tags: ['React Components', 'Animated UI', 'Framer Motion', 'Interactive'],
+    subcategories: ['freeassets'],
+    tags: ['100% Free', 'Animated Backgrounds', 'React Components', 'Text Animations', 'Copy-Paste Code'],
     isHot: true,
-    rating: 4.9
+    rating: 5.0
   },
   {
     id: 'nextjs',
