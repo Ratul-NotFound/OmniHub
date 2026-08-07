@@ -10,6 +10,7 @@ import {
   Palette,
   BookOpen,
   Wrench,
+  GitBranch,
   Bookmark,
   ChevronLeft,
   ChevronRight
@@ -51,6 +52,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
       case 'Palette': return <Palette {...props} />;
       case 'BookOpen': return <BookOpen {...props} />;
       case 'Wrench': return <Wrench {...props} />;
+      case 'GitBranch': return <GitBranch {...props} />;
       default: return <LayoutDashboard {...props} />;
     }
   };

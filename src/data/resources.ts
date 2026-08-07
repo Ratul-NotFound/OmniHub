@@ -3,7 +3,7 @@ export interface Resource {
   title: string;
   description: string;
   url: string;
-  category: 'ai' | 'free' | 'websites' | 'libraries' | 'design' | 'learning' | 'utilities';
+  category: 'ai' | 'free' | 'repos' | 'websites' | 'libraries' | 'design' | 'learning' | 'utilities';
   subcategory?: string; // Primary subcategory for AI and Free Tools grouping
   subcategories?: string[]; // Optional array for tools belonging to multiple subcategories
   tags: string[];
@@ -46,6 +46,12 @@ export const CATEGORIES: Category[] = [
     description: 'Free tier databases, hostings, SSL domains, and free LLM APIs'
   },
   {
+    id: 'repos',
+    name: 'GitHub Repos',
+    iconName: 'GitBranch',
+    description: 'Curated trending GitHub repositories, awesome lists, and self-hosted tools'
+  },
+  {
     id: 'websites',
     name: 'Dev Hubs & News',
     iconName: 'Globe',
@@ -75,6 +81,15 @@ export const CATEGORIES: Category[] = [
     iconName: 'Wrench',
     description: 'Standalone web tools to test APIs, format JSON, inspect bundle sizes, and generate favicons'
   }
+];
+
+export const REPO_SUBCATEGORIES: Subcategory[] = [
+  { id: 'all', name: 'All Repos' },
+  { id: 'awesome', name: 'Awesome Lists & Guides' },
+  { id: 'ai_ml', name: 'AI & Machine Learning' },
+  { id: 'selfhosted', name: 'Self-Hosted Tools' },
+  { id: 'fullstack', name: 'Full-Stack Boilerplates' },
+  { id: 'dev_tools', name: 'CLI & Productivity' }
 ];
 
 export const AI_SUBCATEGORIES: Subcategory[] = [
@@ -1817,6 +1832,244 @@ export const RESOURCES: Resource[] = [
     category: 'free',
     subcategory: 'freestorage',
     tags: ['Free Media CDN', 'Image Optimization', '20GB Bandwidth'],
+    rating: 4.8
+  },
+
+  // ================= GITHUB REPOS =================
+
+  // --- Awesome Lists & Guides ---
+  {
+    id: 'repo-awesome-selfhosted',
+    title: 'awesome-selfhosted',
+    description: 'A list of Free Software network services and web applications which can be hosted on your own servers.',
+    url: 'https://github.com/awesome-selfhosted/awesome-selfhosted',
+    category: 'repos',
+    subcategory: 'awesome',
+    tags: ['180k+ Stars', 'Self-Hosted', 'Open Source', 'Awesome List'],
+    isHot: true,
+    rating: 5.0,
+    useCases: [
+      'Finding self-hostable open-source alternatives to SaaS software.',
+      'Deploying personal cloud servers for file storage, automation, and media.',
+      'Learning server administration and Docker container orchestration.'
+    ],
+    features: [
+      'Comprehensive directory of 1,000+ self-hostable projects.',
+      'Categorized by media, databases, analytics, CRM, and cloud storage.',
+      'Active community contribution and weekly maintenance.'
+    ],
+    freeTierDetails: '100% free open-source GitHub repository list.'
+  },
+  {
+    id: 'repo-free-programming-books',
+    title: 'free-programming-books',
+    description: 'Freely available programming books, online courses, interactive coding tutorials, and problem sets in all programming languages.',
+    url: 'https://github.com/EbookFoundation/free-programming-books',
+    category: 'repos',
+    subcategory: 'awesome',
+    tags: ['330k+ Stars', 'Free Books', 'Education', 'Tutorials'],
+    isHot: true,
+    rating: 5.0,
+    useCases: [
+      'Learning computer science, algorithms, and software engineering for free.',
+      'Accessing free technical ebooks in English and 40+ international languages.',
+      'Finding free interactive coding courses and cheat sheets.'
+    ],
+    features: [
+      'Largest collection of free programming literature on the web.',
+      'Organized by programming language, operating system, and framework.',
+      'Maintained by the Free Ebook Foundation.'
+    ],
+    freeTierDetails: '100% free community resource directory.'
+  },
+  {
+    id: 'repo-awesome',
+    title: 'sindresorhus/awesome',
+    description: 'The official master repository of awesome lists about programming languages, frameworks, AI models, and computer science topics.',
+    url: 'https://github.com/sindresorhus/awesome',
+    category: 'repos',
+    subcategory: 'awesome',
+    tags: ['320k+ Stars', 'Awesome Master List', 'Curated'],
+    isHot: true,
+    rating: 5.0
+  },
+  {
+    id: 'repo-awesome-python',
+    title: 'awesome-python',
+    description: 'A curated list of awesome Python frameworks, libraries, software, machine learning packages, and web scraping utilities.',
+    url: 'https://github.com/vinta/awesome-python',
+    category: 'repos',
+    subcategory: 'awesome',
+    tags: ['220k+ Stars', 'Python', 'ML Packages', 'Awesome List'],
+    rating: 4.9
+  },
+
+  // --- AI & Machine Learning Repos ---
+  {
+    id: 'repo-deepseek-v3',
+    title: 'DeepSeek-V3 & R1 Repo',
+    description: 'Official open-weights model architecture, reasoning research papers, inference scripts, and training code for DeepSeek V3 & R1.',
+    url: 'https://github.com/deepseek-ai/DeepSeek-V3',
+    category: 'repos',
+    subcategory: 'ai_ml',
+    subcategories: ['ai_ml', 'freeresearch'],
+    tags: ['60k+ Stars', 'DeepSeek R1', 'Open Weights', 'AI Reasoning'],
+    isHot: true,
+    rating: 5.0,
+    useCases: [
+      'Inspecting SOTA open-weights reasoning model architecture.',
+      'Deploying DeepSeek V3 locally or on private cloud servers.',
+      'Fine-tuning reasoning models for specialized domain tasks.'
+    ],
+    features: [
+      'Complete Multi-head Latent Attention (MLA) implementation.',
+      'DeepSeekMoE mixture-of-experts architecture code.',
+      'FP8 inference and training optimizations.'
+    ],
+    freeTierDetails: '100% open-weights repository under MIT license.'
+  },
+  {
+    id: 'repo-ollama',
+    title: 'ollama/ollama',
+    description: 'Get up and running with Llama 3.3, DeepSeek R1, Mistral, and Qwen locally on macOS, Linux, and Windows.',
+    url: 'https://github.com/ollama/ollama',
+    category: 'repos',
+    subcategory: 'ai_ml',
+    subcategories: ['ai_ml', 'freeresearch'],
+    tags: ['110k+ Stars', 'Local LLM CLI', 'C++', 'Go'],
+    isHot: true,
+    rating: 5.0
+  },
+  {
+    id: 'repo-sd-webui',
+    title: 'stable-diffusion-webui',
+    description: 'Browser interface for Stable Diffusion built with Gradio. Includes LoRA training, inpointing, ControlNet, and SDXL support.',
+    url: 'https://github.com/AUTOMATIC1111/stable-diffusion-webui',
+    category: 'repos',
+    subcategory: 'ai_ml',
+    tags: ['140k+ Stars', 'Stable Diffusion', 'Gradio UI', 'Image AI'],
+    rating: 4.9
+  },
+  {
+    id: 'repo-n8n',
+    title: 'n8n Workflow Automation',
+    description: 'Fair-code workflow automation platform with native AI agent nodes, vector store integrations, and 400+ API integrations.',
+    url: 'https://github.com/n8n-io/n8n',
+    category: 'repos',
+    subcategory: 'ai_ml',
+    tags: ['65k+ Stars', 'AI Agents', 'Automation', 'Self-Hosted'],
+    isHot: true,
+    rating: 4.9
+  },
+
+  // --- Self-Hosted Tools ---
+  {
+    id: 'repo-coolify',
+    title: 'coolifyhq/coolify',
+    description: 'An open-source & self-hostable Heroku, Netlify, and Vercel alternative for one-click deployment of apps, databases, and Docker containers.',
+    url: 'https://github.com/coolifyhq/coolify',
+    category: 'repos',
+    subcategory: 'selfhosted',
+    tags: ['35k+ Stars', 'Self-Host PaaS', 'Docker', 'Vercel Alternative'],
+    isHot: true,
+    rating: 5.0,
+    useCases: [
+      'Hosting full-stack Next.js, Node, and Python apps on your own $5 VPS.',
+      'Deploying automatic PostgreSQL, Redis, and MongoDB databases with 1 click.',
+      'Setting up automated GitHub CI/CD deployments on custom domains.'
+    ],
+    features: [
+      'Self-hosted cloud PaaS with instant SSL certificate generation.',
+      'Supports Docker Compose, static sites, databases, and webhooks.',
+      'Zero vendor lock-in with 100% control over server infrastructure.'
+    ],
+    freeTierDetails: '100% open-source & free to self-host on any server.'
+  },
+  {
+    id: 'repo-supabase',
+    title: 'supabase/supabase',
+    description: 'The open-source Firebase alternative. Build backends with PostgreSQL, Auth, Realtime subscriptions, Storage, and Edge Functions.',
+    url: 'https://github.com/supabase/supabase',
+    category: 'repos',
+    subcategory: 'selfhosted',
+    tags: ['75k+ Stars', 'PostgreSQL', 'Auth', 'Open Source'],
+    isHot: true,
+    rating: 4.9
+  },
+  {
+    id: 'repo-appwrite',
+    title: 'appwrite/appwrite',
+    description: 'Complete end-to-end backend server for Web, Mobile, and Flutter developers with databases, authentication, storage, and cloud functions.',
+    url: 'https://github.com/appwrite/appwrite',
+    category: 'repos',
+    subcategory: 'selfhosted',
+    tags: ['45k+ Stars', 'BaaS', 'Docker', 'Firebase Alt'],
+    rating: 4.8
+  },
+
+  // --- Full-Stack Boilerplates ---
+  {
+    id: 'repo-create-t3-app',
+    title: 't3-oss/create-t3-app',
+    description: 'The best way to start a full-stack, type-safe Next.js application with Tailwind CSS, TypeScript, Prisma, and NextAuth.',
+    url: 'https://github.com/t3-oss/create-t3-app',
+    category: 'repos',
+    subcategory: 'fullstack',
+    tags: ['25k+ Stars', 'T3 Stack', 'Next.js', 'TypeScript'],
+    isHot: true,
+    rating: 4.9
+  },
+  {
+    id: 'repo-bulletproof-react',
+    title: 'bulletproof-react',
+    description: 'A simple, scalable, and powerful architecture guide for building production-ready React applications with best practices.',
+    url: 'https://github.com/alan2207/bulletproof-react',
+    category: 'repos',
+    subcategory: 'fullstack',
+    tags: ['26k+ Stars', 'React Architecture', 'Best Practices'],
+    rating: 4.9
+  },
+
+  // --- CLI & Productivity Tools ---
+  {
+    id: 'repo-lazygit',
+    title: 'jesseduffield/lazygit',
+    description: 'Simple and intuitive terminal UI for git commands written in Go, allowing keyboard-driven staging, committing, and rebasing.',
+    url: 'https://github.com/jesseduffield/lazygit',
+    category: 'repos',
+    subcategory: 'dev_tools',
+    tags: ['48k+ Stars', 'Git TUI', 'Terminal', 'Go'],
+    isHot: true,
+    rating: 4.9
+  },
+  {
+    id: 'repo-starship',
+    title: 'starship/starship',
+    description: 'The minimal, blazing-fast, and infinitely customizable prompt for any shell (PowerShell, Zsh, Fish, Bash).',
+    url: 'https://github.com/starship/starship',
+    category: 'repos',
+    subcategory: 'dev_tools',
+    tags: ['42k+ Stars', 'Shell Prompt', 'Rust', 'Cross Platform'],
+    rating: 4.8
+  },
+  {
+    id: 'repo-ripgrep',
+    title: 'BurntSushi/ripgrep',
+    description: 'Blazing-fast line-oriented search tool that recursively searches directories for regex patterns (faster than grep and ack).',
+    url: 'https://github.com/BurntSushi/ripgrep',
+    category: 'repos',
+    subcategory: 'dev_tools',
+    tags: ['45k+ Stars', 'Fast Search', 'Rust CLI', 'Regex'],
+    rating: 4.9
+  },
+  {
+    id: 'repo-zoxide',
+    title: 'ajeetdsouza/zoxide',
+    description: 'A smarter cd command that remembers your most used directories, allowing instant navigation with fuzzy matching.',
+    url: 'https://github.com/ajeetdsouza/zoxide',
+    category: 'repos',
+    subcategory: 'dev_tools',
+    tags: ['20k+ Stars', 'Smart CD', 'Rust CLI', 'Productivity'],
     rating: 4.8
   },
 
