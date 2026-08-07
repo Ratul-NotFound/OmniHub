@@ -3,6 +3,7 @@ import { Sidebar } from './components/Sidebar';
 import { Header } from './components/Header';
 import { ResourceCard } from './components/ResourceCard';
 import { SubmitModal } from './components/SubmitModal';
+import { ResourceDetailModal } from './components/ResourceDetailModal';
 import { RESOURCES, AI_SUBCATEGORIES, FREE_SUBCATEGORIES, LIBRARY_SUBCATEGORIES } from './data/resources';
 import type { Resource } from './data/resources';
 import styles from './App.module.css';
@@ -33,6 +34,7 @@ export default function App() {
 
   // Modal suggestions state
   const [isSubmitOpen, setIsSubmitOpen] = useState(false);
+  const [selectedResourceDetails, setSelectedResourceDetails] = useState<Resource | null>(null);
 
   // Bookmarks state (ids stored in localStorage)
   const [bookmarks, setBookmarks] = useState<string[]>(() => {
@@ -260,6 +262,7 @@ export default function App() {
                   isBookmarked={bookmarks.includes(res.id)}
                   onToggleBookmark={handleToggleBookmark}
                   onTagClick={handleTagClick}
+                  onOpenDetails={(resource) => setSelectedResourceDetails(resource)}
                   viewMode={viewMode}
                 />
               ))}
@@ -287,6 +290,14 @@ export default function App() {
         isOpen={isSubmitOpen}
         onClose={() => setIsSubmitOpen(false)}
         onSubmitSuccess={handleSubmitSuccess}
+      />
+
+      {/* Rich Resource Details Modal Overlay */}
+      <ResourceDetailModal
+        resource={selectedResourceDetails}
+        isOpen={!!selectedResourceDetails}
+        onClose={() => setSelectedResourceDetails(null)}
+        onTagClick={handleTagClick}
       />
     </div>
   );

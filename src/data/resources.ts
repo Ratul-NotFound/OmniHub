@@ -9,6 +9,9 @@ export interface Resource {
   tags: string[];
   isHot?: boolean;
   rating: number;
+  useCases?: string[];
+  features?: string[];
+  freeTierDetails?: string;
 }
 
 export interface Category {

@@ -6,7 +6,8 @@ import {
   ExternalLink, 
   Share2, 
   Star, 
-  Check 
+  Check,
+  Info
 } from 'lucide-react';
 
 interface ResourceCardProps {
@@ -14,6 +15,7 @@ interface ResourceCardProps {
   isBookmarked: boolean;
   onToggleBookmark: (id: string) => void;
   onTagClick: (tag: string) => void;
+  onOpenDetails: (resource: Resource) => void;
   viewMode: 'grid' | 'list';
 }
 
@@ -22,6 +24,7 @@ export const ResourceCard: React.FC<ResourceCardProps> = ({
   isBookmarked,
   onToggleBookmark,
   onTagClick,
+  onOpenDetails,
   viewMode
 }) => {
   const [copied, setCopied] = useState(false);
@@ -101,10 +104,10 @@ export const ResourceCard: React.FC<ResourceCardProps> = ({
       {/* Description Text */}
       <p className={styles.description}>{resource.description}</p>
 
-      {/* Footer Section (Tags + Launch Button) */}
+      {/* Footer Section (Tags + Details + Share + Visit Buttons) */}
       <div className={styles.footer}>
         <div className={styles.tagsRow}>
-          {resource.tags.slice(0, 3).map(tag => (
+          {resource.tags.slice(0, 2).map(tag => (
             <button
               key={tag}
               onClick={() => onTagClick(tag)}
@@ -116,6 +119,17 @@ export const ResourceCard: React.FC<ResourceCardProps> = ({
         </div>
 
         <div className={styles.btnRow}>
+          {/* Details Modal Trigger */}
+          <button
+            onClick={() => onOpenDetails(resource)}
+            className={styles.detailsBtn}
+            title="View Use Cases, Features & Free Tier Details"
+          >
+            <Info size={12} />
+            <span>Details</span>
+          </button>
+
+          {/* Copy Share Trigger */}
           <button
             onClick={handleShare}
             className={`${styles.iconBtn} ${copied ? styles.copiedBtn : ''}`}
@@ -124,6 +138,8 @@ export const ResourceCard: React.FC<ResourceCardProps> = ({
           >
             {copied ? <Check size={13} /> : <Share2 size={13} />}
           </button>
+
+          {/* External Link */}
           <a
             href={resource.url}
             target="_blank"
