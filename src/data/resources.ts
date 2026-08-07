@@ -100,6 +100,15 @@ export const FREE_SUBCATEGORIES: Subcategory[] = [
   { id: 'freestorage', name: 'Free Storage & CDN' }
 ];
 
+export const LIBRARY_SUBCATEGORIES: Subcategory[] = [
+  { id: 'all', name: 'All Libraries' },
+  { id: 'uicomponents', name: 'Copy-Paste UI Components' },
+  { id: 'frontend', name: 'Frontend Frameworks' },
+  { id: 'backend', name: 'Backend & Server' },
+  { id: 'styling', name: 'CSS & Motion' },
+  { id: 'stateapi', name: 'State & Data Fetching' }
+];
+
 export const RESOURCES: Resource[] = [
   // ================= AI TOOLS =================
   
@@ -1660,29 +1669,106 @@ export const RESOURCES: Resource[] = [
     description: 'The library for web and native user interfaces. Build interfaces from individual pieces called components.',
     url: 'https://react.dev',
     category: 'libraries',
+    subcategory: 'frontend',
     tags: ['Frontend', 'Components', 'Virtual DOM'],
     rating: 4.9
   },
   {
+    id: 'nextjs',
+    title: 'Next.js',
+    description: 'The React Framework for the Web. Enabling hybrid server-side rendering, static site generation, and server actions.',
+    url: 'https://nextjs.org',
+    category: 'libraries',
+    subcategory: 'frontend',
+    tags: ['SSR', 'React', 'Routing', 'Vercel'],
+    isHot: true,
+    rating: 4.8
+  },
+  {
+    id: 'vue',
+    title: 'Vue.js',
+    description: 'The progressive JavaScript framework for building user interfaces. Approachable, performant, and versatile.',
+    url: 'https://vuejs.org',
+    category: 'libraries',
+    subcategory: 'frontend',
+    tags: ['Frontend', 'Reactive UI', 'Progressive'],
+    rating: 4.8
+  },
+  {
+    id: 'astro',
+    title: 'Astro Web Framework',
+    description: 'The web framework for content-driven websites. Delivers ultra-fast page loads with Islands Architecture and zero JS by default.',
+    url: 'https://astro.build',
+    category: 'libraries',
+    subcategory: 'frontend',
+    tags: ['Islands Architecture', 'Static Site', 'Performance'],
+    isHot: true,
+    rating: 4.9
+  },
+  {
     id: 'reactbits',
-    title: 'React Bits',
+    title: 'React Bits Animated UI',
     description: '100% free open-source library of pre-built animated background effects, text animations, interactive UI components, and copy-paste React code snippets.',
     url: 'https://reactbits.dev',
     category: 'libraries',
-    subcategories: ['freeassets'],
-    tags: ['100% Free', 'Animated Backgrounds', 'React Components', 'Text Animations', 'Copy-Paste Code'],
+    subcategory: 'uicomponents',
+    subcategories: ['uicomponents', 'freeassets'],
+    tags: ['100% Free', 'Animated Backgrounds', 'React Components', 'Copy-Paste Code'],
     isHot: true,
     rating: 5.0
   },
   {
-    id: 'nextjs',
-    title: 'Next.js',
-    description: 'The React Framework for the Web. Used by some of the world\'s largest companies, enabling hybrid static & server rendering.',
-    url: 'https://nextjs.org',
+    id: 'shadcnui',
+    title: 'shadcn/ui',
+    description: 'Beautifully designed copy-paste components built with Radix UI and Tailwind CSS that you own and customize 100%.',
+    url: 'https://ui.shadcn.com',
     category: 'libraries',
-    tags: ['SSR', 'React', 'Routing', 'Vercel'],
+    subcategory: 'uicomponents',
+    subcategories: ['uicomponents', 'freeassets'],
+    tags: ['Components', 'Design System', 'Radix UI'],
     isHot: true,
+    rating: 4.9
+  },
+  {
+    id: 'hono',
+    title: 'Hono Web Framework',
+    description: 'Ultra-fast, lightweight, web framework built for Cloudflare Workers, Deno, Bun, and Node.js with strong TypeScript support.',
+    url: 'https://hono.dev',
+    category: 'libraries',
+    subcategory: 'backend',
+    tags: ['Ultra Fast', 'Cloudflare Workers', 'TypeScript', 'Backend'],
+    isHot: true,
+    rating: 4.9
+  },
+  {
+    id: 'nestjs',
+    title: 'NestJS Framework',
+    description: 'A progressive Node.js framework for building efficient, reliable, and scalable server-side enterprise applications.',
+    url: 'https://nestjs.com',
+    category: 'libraries',
+    subcategory: 'backend',
+    tags: ['Node.js Framework', 'TypeScript', 'Enterprise', 'Backend'],
     rating: 4.8
+  },
+  {
+    id: 'express',
+    title: 'Express.js',
+    description: 'Fast, unopinionated, minimalist web framework for Node.js powering backend APIs and microservices globally.',
+    url: 'https://expressjs.com',
+    category: 'libraries',
+    subcategory: 'backend',
+    tags: ['Node.js', 'REST API', 'Backend'],
+    rating: 4.7
+  },
+  {
+    id: 'prisma',
+    title: 'Prisma ORM',
+    description: 'Next-generation Node.js and TypeScript ORM for databases. Provides type-safe database queries and migrations.',
+    url: 'https://www.prisma.io',
+    category: 'libraries',
+    subcategory: 'backend',
+    tags: ['Database', 'ORM', 'TypeScript', 'Backend'],
+    rating: 4.7
   },
   {
     id: 'tailwind',
@@ -1690,62 +1776,39 @@ export const RESOURCES: Resource[] = [
     description: 'A utility-first CSS framework packed with classes that can be composed to build any design, directly in your markup.',
     url: 'https://tailwindcss.com',
     category: 'libraries',
+    subcategory: 'styling',
     tags: ['Styling', 'CSS Modules', 'Responsive'],
     rating: 4.8
   },
   {
     id: 'framer-motion',
     title: 'Framer Motion',
-    description: 'A production-ready motion library for React. Supercharge components with high-performance gestures and animations.',
+    description: 'A production-ready motion library for React. Supercharge components with high-performance gestures and spring physics animations.',
     url: 'https://motion.dev',
     category: 'libraries',
-    tags: ['Animations', 'React', 'Motion'],
+    subcategory: 'styling',
+    tags: ['Animations', 'React', 'Motion Physics'],
     isHot: true,
     rating: 4.7
   },
   {
-    id: 'shadcnui',
-    title: 'shadcn/ui',
-    description: 'Beautifully designed components that you can copy and paste into your apps. Built with Radix UI and Tailwind CSS.',
-    url: 'https://ui.shadcn.com',
+    id: 'tanstack-query',
+    title: 'TanStack Query (React Query)',
+    description: 'Powerful asynchronous state management, server-state caching, optimistic updates, and auto-refetching for React & TS.',
+    url: 'https://tanstack.com/query',
     category: 'libraries',
-    tags: ['Components', 'Design System', 'Radix UI'],
+    subcategory: 'stateapi',
+    tags: ['Async State', 'React Query', 'Data Fetching', 'Caching'],
     isHot: true,
     rating: 4.9
   },
   {
-    id: 'threejs',
-    title: 'Three.js',
-    description: 'An easy to use, lightweight, 3D library with a default WebGL renderer. Perfect for creating interactive 3D web experiences.',
-    url: 'https://threejs.org',
-    category: 'libraries',
-    tags: ['3D Web', 'WebGL', 'Graphics'],
-    rating: 4.8
-  },
-  {
-    id: 'lucide-icons',
-    title: 'Lucide Icons',
-    description: 'Beautiful, consistent, and customizable open-source icon library for modern web applications.',
-    url: 'https://lucide.dev',
-    category: 'libraries',
-    tags: ['Icons', 'UI Elements', 'SVG'],
-    rating: 4.8
-  },
-  {
-    id: 'prisma',
-    title: 'Prisma ORM',
-    description: 'Next-generation Node.js and TypeScript ORM for databases. Provides type-safe database queries and migration tools.',
-    url: 'https://www.prisma.io',
-    category: 'libraries',
-    tags: ['Database', 'ORM', 'TypeScript', 'Backend'],
-    rating: 4.7
-  },
-  {
     id: 'zustand',
-    title: 'Zustand',
-    description: 'Small, fast, and scalable state-management solution for React using simplified flux principles.',
+    title: 'Zustand State Management',
+    description: 'Small, fast, and scalable state-management solution for React using simplified flux principles without boilerplate.',
     url: 'https://zustand-demo.pmnd.rs',
     category: 'libraries',
+    subcategory: 'stateapi',
     tags: ['State Management', 'React', 'Lightweight'],
     rating: 4.8
   },

@@ -3,7 +3,7 @@ import { Sidebar } from './components/Sidebar';
 import { Header } from './components/Header';
 import { ResourceCard } from './components/ResourceCard';
 import { SubmitModal } from './components/SubmitModal';
-import { RESOURCES, AI_SUBCATEGORIES, FREE_SUBCATEGORIES } from './data/resources';
+import { RESOURCES, AI_SUBCATEGORIES, FREE_SUBCATEGORIES, LIBRARY_SUBCATEGORIES } from './data/resources';
 import type { Resource } from './data/resources';
 import styles from './App.module.css';
 
@@ -111,6 +111,7 @@ export default function App() {
   const getSubcategoriesForCategory = () => {
     if (activeCategory === 'ai') return AI_SUBCATEGORIES;
     if (activeCategory === 'free') return FREE_SUBCATEGORIES;
+    if (activeCategory === 'libraries') return LIBRARY_SUBCATEGORIES;
     if (activeCategory === 'all') {
       return [
         { id: 'all', name: 'All Resources' },
