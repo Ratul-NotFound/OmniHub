@@ -15,28 +15,44 @@
 
 .content {
   flex: 1;
-  padding: 1.5rem;
+  padding: 1.75rem 2rem;
   overflow-y: auto;
 }
 
-/* AI Subcategory Bar */
+/* Horizontal Scrollable Subcategory Bar */
 .subCategoryBar {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-  margin-bottom: 1.25rem;
+  align-items: center;
+  gap: 0.45rem;
+  margin-bottom: 1.5rem;
+  overflow-x: auto;
+  padding-bottom: 0.35rem;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-color) transparent;
+}
+
+.subCategoryBar::-webkit-scrollbar {
+  height: 4px;
+}
+
+.subCategoryBar::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 2px;
 }
 
 .subCategoryBtn {
   font-family: var(--font-mono);
-  font-size: 0.725rem;
-  font-weight: 600;
-  padding: 0.3rem 0.6rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.35rem 0.75rem;
   background-color: var(--bg-secondary);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-sm);
   color: var(--text-secondary);
+  white-space: nowrap;
+  flex-shrink: 0;
   transition: all var(--transition-fast);
+  cursor: pointer;
 }
 
 .subCategoryBtn:hover {
@@ -46,9 +62,10 @@
 }
 
 .activeSubCategoryBtn {
-  background-color: var(--bg-tertiary) !important;
-  border-color: var(--border-color) !important;
-  color: var(--text-primary) !important;
+  background-color: var(--text-primary) !important;
+  border-color: var(--text-primary) !important;
+  color: var(--bg-primary) !important;
+  font-weight: 600 !important;
 }
 
 /* Resources Grid & Lists Layouts */
@@ -58,8 +75,8 @@
 
 .gridLayout {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(265px, 1fr));
-  gap: 0.75rem;
+  grid-template-columns: repeat(auto-fill, minmax(295px, 1fr));
+  gap: 1rem;
 }
 
 .listLayout {
@@ -123,7 +140,7 @@
 /* Screen width responsive overrides */
 @media (max-width: 992px) {
   .content {
-    padding: 1rem;
+    padding: 1.25rem 1rem;
   }
 }
 
