@@ -11,6 +11,7 @@ import {
   BookOpen,
   Wrench,
   GitBranch,
+  Workflow,
   Bookmark,
   ChevronLeft,
   ChevronRight
@@ -53,6 +54,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
       case 'BookOpen': return <BookOpen {...props} />;
       case 'Wrench': return <Wrench {...props} />;
       case 'GitBranch': return <GitBranch {...props} />;
+      case 'Workflow': return <Workflow {...props} />;
       default: return <LayoutDashboard {...props} />;
     }
   };

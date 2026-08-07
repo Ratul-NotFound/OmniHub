@@ -4,7 +4,7 @@ import { Header } from './components/Header';
 import { ResourceCard } from './components/ResourceCard';
 import { SubmitModal } from './components/SubmitModal';
 import { ResourceDetailModal } from './components/ResourceDetailModal';
-import { RESOURCES, AI_SUBCATEGORIES, FREE_SUBCATEGORIES, LIBRARY_SUBCATEGORIES, REPO_SUBCATEGORIES } from './data/resources';
+import { RESOURCES, AI_SUBCATEGORIES, FREE_SUBCATEGORIES, LIBRARY_SUBCATEGORIES, REPO_SUBCATEGORIES, AUTOMATION_SUBCATEGORIES } from './data/resources';
 import type { Resource } from './data/resources';
 import styles from './App.module.css';
 
@@ -115,6 +115,7 @@ export default function App() {
     if (activeCategory === 'free') return FREE_SUBCATEGORIES;
     if (activeCategory === 'libraries') return LIBRARY_SUBCATEGORIES;
     if (activeCategory === 'repos') return REPO_SUBCATEGORIES;
+    if (activeCategory === 'automation') return AUTOMATION_SUBCATEGORIES;
     if (activeCategory === 'all') {
       return [
         { id: 'all', name: 'All Resources' },

@@ -3,7 +3,7 @@ export interface Resource {
   title: string;
   description: string;
   url: string;
-  category: 'ai' | 'free' | 'repos' | 'websites' | 'libraries' | 'design' | 'learning' | 'utilities';
+  category: 'ai' | 'free' | 'repos' | 'automation' | 'websites' | 'libraries' | 'design' | 'learning' | 'utilities';
   subcategory?: string; // Primary subcategory for AI and Free Tools grouping
   subcategories?: string[]; // Optional array for tools belonging to multiple subcategories
   tags: string[];
@@ -52,6 +52,12 @@ export const CATEGORIES: Category[] = [
     description: 'Curated trending GitHub repositories, awesome lists, and self-hosted tools'
   },
   {
+    id: 'automation',
+    name: 'Automation Tools',
+    iconName: 'Workflow',
+    description: 'Workflow automation, AI agents, web scraping, and CI/CD pipelines'
+  },
+  {
     id: 'websites',
     name: 'Dev Hubs & News',
     iconName: 'Globe',
@@ -81,6 +87,14 @@ export const CATEGORIES: Category[] = [
     iconName: 'Wrench',
     description: 'Standalone web tools to test APIs, format JSON, inspect bundle sizes, and generate favicons'
   }
+];
+
+export const AUTOMATION_SUBCATEGORIES: Subcategory[] = [
+  { id: 'all', name: 'All Automation' },
+  { id: 'nocode_workflow', name: 'No-Code & Low-Code Workflows' },
+  { id: 'ai_agents', name: 'AI Agents & Orchestration' },
+  { id: 'browser_scraping', name: 'Browser Automation & Scraping' },
+  { id: 'devops_ci', name: 'DevOps & CI/CD Pipelines' }
 ];
 
 export const REPO_SUBCATEGORIES: Subcategory[] = [
@@ -2093,6 +2107,194 @@ export const RESOURCES: Resource[] = [
     category: 'repos',
     subcategory: 'dev_tools',
     tags: ['20k+ Stars', 'Smart CD', 'Rust CLI', 'Productivity'],
+    rating: 4.8
+  },
+
+  // ================= AUTOMATION TOOLS =================
+
+  // --- No-Code & Low-Code Workflows ---
+  {
+    id: 'auto-n8n',
+    title: 'n8n Workflow Automation',
+    description: 'Fair-code workflow automation platform with native AI agent nodes, vector store integrations, and 400+ API integrations.',
+    url: 'https://n8n.io',
+    category: 'automation',
+    subcategory: 'nocode_workflow',
+    subcategories: ['nocode_workflow', 'ai_agents'],
+    tags: ['Fair Code', '400+ Apps', 'AI Agents', 'Self-Hosted'],
+    isHot: true,
+    rating: 5.0,
+    useCases: [
+      'Automating complex multi-step business workflows without paying per execution.',
+      'Connecting LLM APIs with vector databases and internal Postgres/MySQL databases.',
+      'Building self-hosted automation infrastructure with 100% data privacy.'
+    ],
+    features: [
+      'Visual node-based workflow editor with JavaScript/Python code nodes.',
+      'Native AI agent nodes supporting LangChain, OpenAI, and Anthropic.',
+      'Webhooks trigger support and custom API integration builder.'
+    ],
+    freeTierDetails: '100% free open-source self-hosted community edition.'
+  },
+  {
+    id: 'auto-make',
+    title: 'Make (Integromat)',
+    description: 'Visual platform to design, build, and automate arbitrary workflows, applications, and complex business processes with drag-and-drop ease.',
+    url: 'https://www.make.com',
+    category: 'automation',
+    subcategory: 'nocode_workflow',
+    tags: ['Visual Automation', '1000+ Apps', 'No Code'],
+    isHot: true,
+    rating: 4.8,
+    freeTierDetails: 'Free plan includes 1,000 operations per month and 2 active scenarios.'
+  },
+  {
+    id: 'auto-zapier',
+    title: 'Zapier Integration Platform',
+    description: 'Leading web automation platform connecting over 7,000+ web applications with automated multi-app Zaps.',
+    url: 'https://zapier.com',
+    category: 'automation',
+    subcategory: 'nocode_workflow',
+    tags: ['7,000+ Apps', 'No-Code Zaps', 'Lead Gen'],
+    rating: 4.7,
+    freeTierDetails: 'Free plan includes 100 tasks per month and 5 single-step Zaps.'
+  },
+  {
+    id: 'auto-activepieces',
+    title: 'Activepieces Open-Source Zapier',
+    description: '100% open-source no-code business automation tool. Alternative to Zapier designed for self-hosting and privacy.',
+    url: 'https://www.activepieces.com',
+    category: 'automation',
+    subcategory: 'nocode_workflow',
+    tags: ['Open Source', 'Self-Hosted Zapier', 'TypeScript'],
+    rating: 4.8,
+    freeTierDetails: '100% free community self-hosted edition.'
+  },
+  {
+    id: 'auto-windmill',
+    title: 'Windmill Developer Platform',
+    description: 'Open-source developer platform to turn TypeScript, Python, Go, and Bash scripts into workflows, webhooks, auto-generated UIs, and scheduled CRONs.',
+    url: 'https://www.windmill.dev',
+    category: 'automation',
+    subcategory: 'nocode_workflow',
+    tags: ['Script to Workflow', 'Python/TS', 'Developer First'],
+    isHot: true,
+    rating: 4.9
+  },
+
+  // --- AI Agents & Orchestration ---
+  {
+    id: 'auto-crewai',
+    title: 'CrewAI Agent Framework',
+    description: 'Production-ready open-source Python framework for orchestrating role-playing autonomous AI agents to collaborate on complex goals.',
+    url: 'https://www.crewai.com',
+    category: 'automation',
+    subcategory: 'ai_agents',
+    subcategories: ['ai_agents', 'freeresearch'],
+    tags: ['Multi-Agent AI', 'Autonomous Crew', 'Python Framework'],
+    isHot: true,
+    rating: 4.9,
+    useCases: [
+      'Building teams of specialized AI agents (e.g. Researcher, Writer, Code Auditor).',
+      'Automating web research, content generation, and software testing workflows.',
+      'Integrating agentic workflows into production Python & LangChain backends.'
+    ],
+    features: [
+      'Role-based agent assignment with custom tools and memory.',
+      'Sequential and hierarchical agent execution workflows.',
+      'Supports OpenAI, Claude, Groq, and local Ollama models.'
+    ],
+    freeTierDetails: '100% open-source Python library.'
+  },
+  {
+    id: 'auto-flowise',
+    title: 'Flowise AI Visual Builder',
+    description: 'Open-source drag-and-drop UI to build customized LLM flows, RAG pipelines, and LangChain agents with instant API endpoints.',
+    url: 'https://flowiseai.com',
+    category: 'automation',
+    subcategory: 'ai_agents',
+    tags: ['Drag & Drop LLM', 'RAG Pipelines', 'Open Source'],
+    isHot: true,
+    rating: 4.9
+  },
+  {
+    id: 'auto-langflow',
+    title: 'Langflow Agent Orchestrator',
+    description: 'Visual framework for building multi-agent AI applications, vector retrieval pipelines, and conversational AI chatbots.',
+    url: 'https://www.langflow.org',
+    category: 'automation',
+    subcategory: 'ai_agents',
+    tags: ['Visual Agent Builder', 'Multi-Agent', 'Python Component'],
+    rating: 4.8
+  },
+
+  // --- Browser Automation & Scraping ---
+  {
+    id: 'auto-firecrawl',
+    title: 'Firecrawl LLM Web Scraper',
+    description: 'Turn any website into clean Markdown, structured JSON, or vector embeddings for LLM context, RAG, and AI search.',
+    url: 'https://www.firecrawl.dev',
+    category: 'automation',
+    subcategory: 'browser_scraping',
+    tags: ['Web to Markdown', 'LLM Scraper', 'RAG Ready'],
+    isHot: true,
+    rating: 5.0,
+    freeTierDetails: 'Free tier includes 500 free scraped pages per month.'
+  },
+  {
+    id: 'auto-crawl4ai',
+    title: 'Crawl4AI Open Source Scraper',
+    description: 'Open-source, ultra-fast LLM-friendly web crawler & scraper that extracts clean Markdown, images, and structured JSON for AI models.',
+    url: 'https://github.com/unclecode/crawl4ai',
+    category: 'automation',
+    subcategory: 'browser_scraping',
+    tags: ['100% Free Scraper', 'Python', 'LLM Crawler'],
+    isHot: true,
+    rating: 4.9,
+    freeTierDetails: '100% free open-source Python crawler.'
+  },
+  {
+    id: 'auto-playwright',
+    title: 'Microsoft Playwright',
+    description: 'Fast, reliable end-to-end browser automation framework for Chromium, Firefox, and WebKit supporting Python, Node, and C#.',
+    url: 'https://playwright.dev',
+    category: 'automation',
+    subcategory: 'browser_scraping',
+    tags: ['Browser Automation', 'Microsoft', 'Testing & Scraping'],
+    rating: 4.9
+  },
+  {
+    id: 'auto-puppeteer',
+    title: 'Puppeteer Headless Chrome',
+    description: 'Node library providing a high-level API over Chrome DevTools protocol for automated PDF generation, screenshots, and scraping.',
+    url: 'https://pptr.dev',
+    category: 'automation',
+    subcategory: 'browser_scraping',
+    tags: ['Headless Chrome', 'Node.js', 'PDF & Screenshot'],
+    rating: 4.8
+  },
+
+  // --- DevOps & CI/CD Pipelines ---
+  {
+    id: 'auto-github-actions',
+    title: 'GitHub Actions CI/CD',
+    description: 'Automate your build, test, and deployment pipeline directly within GitHub with 2,000 free runner minutes per month.',
+    url: 'https://github.com/features/actions',
+    category: 'automation',
+    subcategory: 'devops_ci',
+    tags: ['2,000 Free Mins', 'GitHub CI/CD', 'Workflow Triggers'],
+    isHot: true,
+    rating: 4.9,
+    freeTierDetails: 'Free for public repos; 2,000 free runner minutes/month for private repos.'
+  },
+  {
+    id: 'auto-dagster',
+    title: 'Dagster Data Orchestrator',
+    description: 'Open-source data orchestrator designed for ML model pipelines, ETL data processing, software-defined assets, and testing.',
+    url: 'https://dagster.io',
+    category: 'automation',
+    subcategory: 'devops_ci',
+    tags: ['Data Orchestration', 'ETL Pipelines', 'MLops'],
     rating: 4.8
   },
 
