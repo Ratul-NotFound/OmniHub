@@ -1302,6 +1302,105 @@ export const RESOURCES: Resource[] = [
     rating: 4.8
   },
   {
+    id: 'free-originui',
+    title: 'Origin UI Input Components',
+    description: 'Beautiful, accessible copy-paste React & Tailwind CSS component primitives for inputs, select menus, sliders, and checkboxes.',
+    url: 'https://originui.com',
+    category: 'free',
+    subcategory: 'freeassets',
+    subcategories: ['freeassets', 'libraries'],
+    tags: ['Copy-Paste UI', 'React Primitives', 'Tailwind CSS'],
+    isHot: true,
+    rating: 4.9
+  },
+  {
+    id: 'free-syntaxui',
+    title: 'Syntax UI Components',
+    description: 'Free open-source collection of modern Tailwind CSS & React components, button animations, glow cards, and modals.',
+    url: 'https://syntaxui.com',
+    category: 'free',
+    subcategory: 'freeassets',
+    subcategories: ['freeassets', 'libraries'],
+    tags: ['Animated UI', 'Tailwind', 'React Components'],
+    isHot: true,
+    rating: 4.8
+  },
+  {
+    id: 'free-floatui',
+    title: 'Float UI Components & Blocks',
+    description: 'Free open-source Tailwind CSS & React components for hero sections, pricing tables, navigation bars, and footers.',
+    url: 'https://floatui.com',
+    category: 'free',
+    subcategory: 'freeassets',
+    subcategories: ['freeassets', 'libraries'],
+    tags: ['Free Blocks', 'Tailwind UI', 'React'],
+    rating: 4.8
+  },
+  {
+    id: 'free-cultui',
+    title: 'Cult UI Motion Components',
+    description: 'Open-source component library for building modern web apps with physics-based motion, spring animations, and micro-interactions.',
+    url: 'https://cult-ui.com',
+    category: 'free',
+    subcategory: 'freeassets',
+    subcategories: ['freeassets', 'libraries'],
+    tags: ['Spring Animations', 'Framer Motion', 'Copy Paste'],
+    rating: 4.8
+  },
+  {
+    id: 'free-bgjar',
+    title: 'BgJar SVG Background Generator',
+    description: 'Free SVG background generator to create glowing, animated, geometric, circuit, polygon, and wave background patterns.',
+    url: 'https://bgjar.com',
+    category: 'free',
+    subcategory: 'freeassets',
+    subcategories: ['freeassets', 'design'],
+    tags: ['SVG Backgrounds', 'Generator', 'Free Design'],
+    isHot: true,
+    rating: 4.8
+  },
+  {
+    id: 'free-heropatterns',
+    title: 'Hero Patterns SVG Backgrounds',
+    description: 'Collection of repeatable SVG background patterns for website headers, hero cards, and landing page backdrops.',
+    url: 'https://heropatterns.com',
+    category: 'free',
+    subcategory: 'freeassets',
+    tags: ['SVG Patterns', 'Backgrounds', 'Free Vector'],
+    rating: 4.7
+  },
+  {
+    id: 'free-animatecss',
+    title: 'Animate.css',
+    description: 'Cross-browser library of ready-to-use CSS animations for text, modals, hover states, and smooth element transitions.',
+    url: 'https://animate.style',
+    category: 'free',
+    subcategory: 'freeassets',
+    subcategories: ['freeassets', 'libraries'],
+    tags: ['CSS Animations', 'Transitions', 'Keyframes'],
+    rating: 4.8
+  },
+  {
+    id: 'free-hovercss',
+    title: 'Hover.css Effects',
+    description: 'Collection of CSS3 powered hover effects to apply to buttons, logos, icons, SVG shapes, and feature cards.',
+    url: 'https://ianlunn.github.io/Hover/',
+    category: 'free',
+    subcategory: 'freeassets',
+    tags: ['Hover Effects', 'CSS3', 'Button Animations'],
+    rating: 4.7
+  },
+  {
+    id: 'free-sailboatui',
+    title: 'Sailboat UI Components',
+    description: '150+ open-source copy-paste Tailwind CSS components for building modern responsive web application interfaces.',
+    url: 'https://sailboatui.com',
+    category: 'free',
+    subcategory: 'freeassets',
+    tags: ['150+ Components', 'Tailwind CSS', 'Open Source'],
+    rating: 4.7
+  },
+  {
     id: 'free-fontshare',
     title: 'Fontshare Free Fonts',
     description: '100% free for commercial use typography directory featuring professional variable fonts by Indian Type Foundry.',
