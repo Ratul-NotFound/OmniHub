@@ -1134,6 +1134,148 @@ export const RESOURCES: Resource[] = [
     tags: ['300k+ Free Datasets', 'ML Benchmark', 'Kaggle'],
     rating: 4.9
   },
+  {
+    id: 'free-paperswithcode',
+    title: 'Papers With Code',
+    description: 'Free open research portal featuring 50,000+ machine learning papers with code implementations, state-of-the-art benchmarks, and dataset leaderboards.',
+    url: 'https://paperswithcode.com',
+    category: 'free',
+    subcategory: 'freeresearch',
+    subcategories: ['freeresearch', 'learning'],
+    tags: ['ML Research', 'Paper + Code', 'SOTA Benchmarks'],
+    isHot: true,
+    rating: 5.0
+  },
+  {
+    id: 'free-roboflow-universe',
+    title: 'Roboflow Computer Vision Datasets',
+    description: '250,000+ free computer vision datasets and annotated image collections for YOLO, object detection, segmentation, and classification models.',
+    url: 'https://universe.roboflow.com',
+    category: 'free',
+    subcategory: 'freeresearch',
+    tags: ['Computer Vision', 'Free Datasets', 'Object Detection', 'YOLO'],
+    isHot: true,
+    rating: 4.9
+  },
+  {
+    id: 'free-hf-datasets',
+    title: 'Hugging Face Datasets Hub',
+    description: 'Explore 100,000+ open-source multi-modal datasets for natural language processing, computer vision, audio, and machine learning.',
+    url: 'https://huggingface.co/datasets',
+    category: 'free',
+    subcategory: 'freeresearch',
+    tags: ['100k+ Datasets', 'Open Source', 'NLP & Vision'],
+    rating: 4.9
+  },
+  {
+    id: 'free-google-dataset-search',
+    title: 'Google Dataset Search',
+    description: 'Google\'s specialized search engine indexing millions of free scientific datasets, public research data, and government data tables.',
+    url: 'https://datasetsearch.research.google.com',
+    category: 'free',
+    subcategory: 'freeresearch',
+    tags: ['Dataset Search', 'Google Search', 'Research Data'],
+    rating: 4.8
+  },
+  {
+    id: 'free-ollama',
+    title: 'Ollama Local LLM Runner',
+    description: 'Run open-source large language models (Llama 3.3, DeepSeek R1, Mistral, Qwen) 100% locally on your laptop for free offline inference.',
+    url: 'https://ollama.com',
+    category: 'free',
+    subcategory: 'freeresearch',
+    subcategories: ['freeresearch', 'llm'],
+    tags: ['100% Free Offline', 'Local LLMs', 'DeepSeek', 'Llama 3'],
+    isHot: true,
+    rating: 5.0
+  },
+  {
+    id: 'free-lmstudio',
+    title: 'LM Studio Local Models',
+    description: 'Free desktop app to discover, download, and run any GGUF open-source LLM offline on your Mac, Windows, or Linux machine with local OpenAI-compatible API.',
+    url: 'https://lmstudio.ai',
+    category: 'free',
+    subcategory: 'freeresearch',
+    subcategories: ['freeresearch', 'llm'],
+    tags: ['Local LLM Desktop', 'Offline AI', 'OpenAI Compatible'],
+    isHot: true,
+    rating: 4.9
+  },
+  {
+    id: 'free-civitai',
+    title: 'Civitai AI Model Repository',
+    description: 'World\'s largest open-source AI image generation model repository featuring thousands of free LoRAs, Checkpoints, and fine-tuned SDXL/Flux weights.',
+    url: 'https://civitai.com',
+    category: 'free',
+    subcategory: 'freeresearch',
+    subcategories: ['freeresearch', 'image'],
+    tags: ['Open Source Models', 'SDXL', 'Flux', 'Image AI'],
+    isHot: true,
+    rating: 4.9
+  },
+  {
+    id: 'free-cvat',
+    title: 'CVAT Computer Vision Annotation',
+    description: 'Free open-source web-based image and video annotation tool for computer vision labeling, object tracking, and dataset preparation.',
+    url: 'https://www.cvat.ai',
+    category: 'free',
+    subcategory: 'freeresearch',
+    tags: ['Computer Vision', 'Data Annotation', 'Bounding Boxes'],
+    rating: 4.8
+  },
+  {
+    id: 'free-label-studio',
+    title: 'Label Studio Multi-Modal Labeling',
+    description: 'Flexible open-source data labeling tool for image classification, object detection, text sentiment, audio transcription, and LLM RLHF.',
+    url: 'https://labelstud.io',
+    category: 'free',
+    subcategory: 'freeresearch',
+    tags: ['Data Labeling', 'RLHF', 'Multi-Modal', 'NLP'],
+    rating: 4.8
+  },
+  {
+    id: 'free-pytorch',
+    title: 'PyTorch Deep Learning Framework',
+    description: 'Leading open-source deep learning framework by Meta AI for tensor computation, dynamic neural networks, and AI research production.',
+    url: 'https://pytorch.org',
+    category: 'free',
+    subcategory: 'freeresearch',
+    subcategories: ['freeresearch', 'libraries'],
+    tags: ['Deep Learning', 'PyTorch', 'Meta AI', 'Neural Networks'],
+    isHot: true,
+    rating: 5.0
+  },
+  {
+    id: 'free-unsloth',
+    title: 'Unsloth Fast Fine-Tuning',
+    description: 'Open-source fine-tuning library that makes LLM training 5x faster with 80% less VRAM usage for Llama 3, DeepSeek, and Mistral models.',
+    url: 'https://unsloth.ai',
+    category: 'free',
+    subcategory: 'freeresearch',
+    tags: ['5x Faster Fine-Tuning', 'Less VRAM', 'Llama 3', 'DeepSeek'],
+    isHot: true,
+    rating: 4.9
+  },
+  {
+    id: 'free-vllm',
+    title: 'vLLM High-Throughput Inference',
+    description: 'Easy, fast, and cheap LLM serving engine with PagedAttention for high-throughput GPU model serving and inference.',
+    url: 'https://github.com/vllm-project/vllm',
+    category: 'free',
+    subcategory: 'freeresearch',
+    tags: ['PagedAttention', 'LLM Serving', 'GPU Inference'],
+    rating: 4.9
+  },
+  {
+    id: 'free-opencv',
+    title: 'OpenCV Computer Vision Library',
+    description: 'Open-source real-time computer vision, machine learning, and image processing library with Python, C++, and Java bindings.',
+    url: 'https://opencv.org',
+    category: 'free',
+    subcategory: 'freeresearch',
+    tags: ['Real-Time Vision', 'Image Processing', 'Open Source'],
+    rating: 4.8
+  },
 
   // --- Free Domains & SSL ---
   {
