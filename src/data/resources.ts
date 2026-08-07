@@ -1224,6 +1224,84 @@ export const RESOURCES: Resource[] = [
     rating: 5.0
   },
   {
+    id: 'free-aceternity',
+    title: 'Aceternity UI Components',
+    description: 'Trending open-source library of copy-paste Tailwind CSS & Framer Motion animated components, 3D cards, and hero backgrounds.',
+    url: 'https://ui.aceternity.com',
+    category: 'free',
+    subcategory: 'freeassets',
+    subcategories: ['freeassets', 'libraries'],
+    tags: ['100% Free UI', 'Tailwind CSS', 'Framer Motion', '3D Components'],
+    isHot: true,
+    rating: 5.0
+  },
+  {
+    id: 'free-magicui',
+    title: 'Magic UI Landing Page Components',
+    description: '50+ free, open-source animated React components built with Tailwind CSS and Framer Motion for high-converting landing pages.',
+    url: 'https://magicui.design',
+    category: 'free',
+    subcategory: 'freeassets',
+    subcategories: ['freeassets', 'libraries'],
+    tags: ['100% Free UI', 'Landing Pages', 'Animated Components', 'React'],
+    isHot: true,
+    rating: 4.9
+  },
+  {
+    id: 'free-shadcn',
+    title: 'shadcn/ui Component Library',
+    description: 'Beautifully designed, accessible, copy-paste React components built with Radix UI and Tailwind CSS that you own 100%.',
+    url: 'https://ui.shadcn.com',
+    category: 'free',
+    subcategory: 'freeassets',
+    subcategories: ['freeassets', 'libraries'],
+    tags: ['Copy Paste UI', 'Tailwind', 'Radix UI', 'Open Source'],
+    isHot: true,
+    rating: 5.0
+  },
+  {
+    id: 'free-uiverse',
+    title: 'Uiverse.io Community UI',
+    description: 'Community-crafted collection of 3,000+ free open-source CSS & HTML buttons, card animations, loaders, and toggle switches.',
+    url: 'https://uiverse.io',
+    category: 'free',
+    subcategory: 'freeassets',
+    tags: ['3000+ Free UI', 'CSS Animations', 'Community Elements'],
+    isHot: true,
+    rating: 4.8
+  },
+  {
+    id: 'free-hyperui',
+    title: 'HyperUI Tailwind Components',
+    description: 'Free open-source Tailwind CSS component collection for marketing web pages, e-commerce stores, and admin dashboards.',
+    url: 'https://www.hyperui.dev',
+    category: 'free',
+    subcategory: 'freeassets',
+    tags: ['Free Tailwind UI', 'Marketing', 'Ecommerce'],
+    rating: 4.7
+  },
+  {
+    id: 'free-lucide',
+    title: 'Lucide Icons',
+    description: 'Beautiful & consistent open-source icon toolkit with over 1,000+ customizable vector icons for React, Vue, and plain web.',
+    url: 'https://lucide.dev',
+    category: 'free',
+    subcategory: 'freeassets',
+    tags: ['1000+ Free Icons', 'Open Source', 'React Icons'],
+    isHot: true,
+    rating: 4.9
+  },
+  {
+    id: 'free-simple-icons',
+    title: 'Simple Icons Brand Vectors',
+    description: 'Over 3,000 free SVG icons for popular brand logos, technology stacks, frameworks, and social media platforms.',
+    url: 'https://simpleicons.org',
+    category: 'free',
+    subcategory: 'freeassets',
+    tags: ['3000+ Brand SVGs', 'Tech Logos', 'SVG Icons'],
+    rating: 4.8
+  },
+  {
     id: 'free-fontshare',
     title: 'Fontshare Free Fonts',
     description: '100% free for commercial use typography directory featuring professional variable fonts by Indian Type Foundry.',
