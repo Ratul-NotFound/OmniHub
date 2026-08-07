@@ -2009,6 +2009,29 @@ export const RESOURCES: Resource[] = [
 
   // --- Full-Stack Boilerplates ---
   {
+    id: 'repo-ecc',
+    title: 'affaan-m/ecc (Everything Cloned)',
+    description: 'Collection of open-source full-stack clones of popular web applications (Vercel, Twitter, Airbnb, Spotify, Notion, Linear, Slack) built with Next.js, React, and Tailwind.',
+    url: 'https://github.com/affaan-m/ecc',
+    category: 'repos',
+    subcategory: 'fullstack',
+    subcategories: ['fullstack', 'awesome'],
+    tags: ['Full-Stack Clones', 'Next.js', 'React', 'Open Source'],
+    isHot: true,
+    rating: 5.0,
+    useCases: [
+      'Studying real-world full-stack architecture of popular tech platforms.',
+      'Using pre-built open-source web clones as starter templates for SaaS MVPs.',
+      'Learning Next.js App Router, Tailwind CSS, Prisma, and Supabase integration.'
+    ],
+    features: [
+      'Comprehensive collection of open-source full-stack web app clones.',
+      'Includes Vercel, Notion, Spotify, Airbnb, Twitter, Trello, and Linear clones.',
+      'Modern TypeScript tech stack with dark mode and database schemas.'
+    ],
+    freeTierDetails: '100% free open-source GitHub repository under MIT license.'
+  },
+  {
     id: 'repo-create-t3-app',
     title: 't3-oss/create-t3-app',
     description: 'The best way to start a full-stack, type-safe Next.js application with Tailwind CSS, TypeScript, Prisma, and NextAuth.',
