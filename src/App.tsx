@@ -107,6 +107,41 @@ export default function App() {
     // Focus search input or just trigger search
   };
 
+  // Subcategories mapping for categories
+  const getSubcategoriesForCategory = () => {
+    if (activeCategory === 'ai') return AI_SUBCATEGORIES;
+    if (activeCategory === 'free') return FREE_SUBCATEGORIES;
+    if (activeCategory === 'all') {
+      return [
+        { id: 'all', name: 'All Resources' },
+        { id: 'freeassets', name: 'Free UI Assets' },
+        { id: 'database', name: 'Free Databases' },
+        { id: 'hosting', name: 'Free Hosting' },
+        { id: 'coding', name: 'AI Coding' },
+        { id: 'appbuilder', name: 'Prompt to App/Web' },
+        { id: 'llm', name: 'LLMs & Chat' },
+        { id: 'llmapi', name: 'Free AI APIs' },
+        { id: 'domains', name: 'Free Domains' },
+        { id: 'freecms', name: 'Headless CMS' },
+        { id: 'freestorage', name: 'Free Storage' }
+      ];
+    }
+    if (activeCategory === 'libraries') {
+      return [
+        { id: 'all', name: 'All Libraries' },
+        { id: 'freeassets', name: 'UI & Animation Libraries' }
+      ];
+    }
+    if (activeCategory === 'design') {
+      return [
+        { id: 'all', name: 'All Design' },
+        { id: 'freeassets', name: 'Icons & Vectors' },
+        { id: 'uiux', name: 'UI/UX Tools' }
+      ];
+    }
+    return [];
+  };
+
   // Filter resources based on Category, Bookmarks, and Search query
   const filteredResources = resources.filter(res => {
     // 1. Bookmarks Filter
@@ -119,8 +154,8 @@ export default function App() {
       return false;
     }
 
-    // 3. AI / Free Subcategory Filter (supports multi-subcategory matching)
-    if (!showBookmarksOnly && (activeCategory === 'ai' || activeCategory === 'free') && activeSubcategory !== 'all') {
+    // 3. Subcategory Filter (supports primary & multi-subcategory matching across all categories)
+    if (!showBookmarksOnly && activeSubcategory !== 'all') {
       const matchesPrimary = res.subcategory === activeSubcategory;
       const matchesMulti = res.subcategories && res.subcategories.includes(activeSubcategory);
       if (!matchesPrimary && !matchesMulti) {
@@ -177,23 +212,10 @@ export default function App() {
 
         {/* Content Body */}
         <main className={styles.content}>
-          {activeCategory === 'ai' && !showBookmarksOnly && (
+          {/* Dynamic Subcategory Navigation Bar (Always visible for all categories) */}
+          {!showBookmarksOnly && getSubcategoriesForCategory().length > 0 && (
             <div className={styles.subCategoryBar}>
-              {AI_SUBCATEGORIES.map(sub => (
-                <button
-                  key={sub.id}
-                  onClick={() => setActiveSubcategory(sub.id)}
-                  className={`${styles.subCategoryBtn} ${activeSubcategory === sub.id ? styles.activeSubCategoryBtn : ''}`}
-                >
-                  {sub.name}
-                </button>
-              ))}
-            </div>
-          )}
-
-          {activeCategory === 'free' && !showBookmarksOnly && (
-            <div className={styles.subCategoryBar}>
-              {FREE_SUBCATEGORIES.map(sub => (
+              {getSubcategoriesForCategory().map(sub => (
                 <button
                   key={sub.id}
                   onClick={() => setActiveSubcategory(sub.id)}
