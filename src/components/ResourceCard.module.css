@@ -1,0 +1,320 @@
+.card {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  transition: all var(--transition-fast);
+}
+
+.gridCard {
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 200px;
+  padding: 1.25rem;
+}
+
+.listCard {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 1.25rem;
+  width: 100%;
+  gap: 1.5rem;
+}
+
+/* Remove Background Glow for Raw Coded Style */
+.glowBg {
+  display: none;
+}
+
+.card:hover {
+  border-color: var(--border-hover);
+  background-color: var(--bg-tertiary);
+}
+
+/* Card Content Area */
+.content {
+  z-index: 1;
+  flex: 1;
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.listCard .header {
+  margin-bottom: 0;
+  flex: 0 0 220px;
+}
+
+/* Avatar / Favicon Container (Raw square format) */
+.avatar {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  background-color: var(--bg-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+}
+
+.favicon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  z-index: 2;
+}
+
+.fallbackLetter {
+  position: absolute;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  z-index: 1;
+}
+
+.titleInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  flex: 1;
+}
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.title {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.domain {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+/* Hot Badge (Minimalist) */
+.hotBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.15rem;
+  background-color: var(--border-color);
+  color: var(--accent-danger);
+  border: 1px solid var(--border-hover);
+  font-size: 0.55rem;
+  font-weight: 700;
+  padding: 0.05rem 0.3rem;
+  border-radius: var(--radius-sm);
+  letter-spacing: 0.02em;
+}
+
+/* Rating Badge */
+.ratingBadge {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  color: var(--accent-amber);
+  padding: 0.15rem 0.4rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.7rem;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.starIcon {
+  color: var(--accent-amber);
+}
+
+/* Description text */
+.description {
+  font-size: 0.825rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+  margin-bottom: 1rem;
+}
+
+.listCard .description {
+  margin-bottom: 0;
+  padding: 0 0.5rem;
+}
+
+/* Tags Container */
+.tagsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.listCard .tagsContainer {
+  display: none;
+}
+
+.tag {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  padding: 0.1rem 0.4rem;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.tag:hover {
+  color: var(--text-primary);
+  border-color: var(--border-hover);
+}
+
+/* Actions Section */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  z-index: 1;
+}
+
+.gridCard .actions {
+  margin-top: 1rem;
+  border-top: 1px solid var(--border-color);
+  padding-top: 0.75rem;
+}
+
+.listCard .actions {
+  flex-shrink: 0;
+}
+
+.actionBtn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  transition: all var(--transition-fast);
+}
+
+.actionBtn:hover {
+  color: var(--text-primary);
+  border-color: var(--border-hover);
+}
+
+.activeBookmark {
+  color: var(--accent-amber) !important;
+  border-color: var(--accent-amber) !important;
+}
+
+.copiedBtn {
+  color: var(--accent-success) !important;
+  border-color: var(--accent-success) !important;
+}
+
+.checkIcon {
+  animation: none;
+}
+
+/* Copied Tooltip (Flat monochrome) */
+.copiedTooltip {
+  position: absolute;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--bg-primary);
+  border: 1px solid var(--accent-success);
+  color: var(--accent-success);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 600;
+  padding: 0.15rem 0.35rem;
+  border-radius: var(--radius-sm);
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+/* Visit Site Button (Raw border button) */
+.visitBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  padding: 0 0.65rem;
+  height: 30px;
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: all var(--transition-fast);
+}
+
+.visitBtn:hover {
+  background-color: var(--text-primary);
+  color: var(--bg-primary);
+  border-color: var(--text-primary);
+}
+
+/* Responsive Overrides */
+@media (max-width: 768px) {
+  .listCard {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+    padding: 1rem;
+  }
+
+  .listCard .header {
+    flex: none;
+  }
+
+  .listCard .description {
+    padding: 0;
+  }
+
+  .listCard .tagsContainer {
+    display: flex;
+    margin-top: 0.5rem;
+  }
+
+  .listCard .actions {
+    border-top: 1px solid var(--border-color);
+    padding-top: 0.5rem;
+    margin-top: 0.25rem;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .visitText {
+    display: none;
+  }
+
+  .visitBtn {
+    padding: 0;
+    width: 30px;
+    justify-content: center;
+  }
+}

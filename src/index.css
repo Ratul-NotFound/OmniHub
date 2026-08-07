@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Typography */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Color Palette - Raw Developer Dark Mode (Default) */
+  --bg-primary: #09090b;      /* Zinc 950 */
+  --bg-secondary: #121214;    /* Slate-like custom dark */
+  --bg-tertiary: #1c1c1f;     /* High contrast elements */
+  
+  --border-color: #27272a;    /* Zinc 800 */
+  --border-hover: #3f3f46;    /* Zinc 700 */
+  
+  --text-primary: #f4f4f5;    /* Zinc 100 */
+  --text-secondary: #a1a1aa;  /* Zinc 400 */
+  --text-muted: #52525b;      /* Zinc 600 */
+
+  /* Accent - Solid, No Glows */
+  --primary: #3b82f6;         /* Solid Blue */
+  --primary-hover: #2563eb;
+  --accent-purple: #a855f7;
+  --accent-amber: #eab308;
+  --accent-success: #10b981;
+  --accent-danger: #f43f5e;
+
+  /* Sizing Tokens - Compact & Raw */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-full: 9999px;
+
+  /* Subtle Shadows - Flat/Crisp */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  
+  --transition-fast: 0.12s ease;
+  --transition-normal: 0.2s ease;
+}
+
+/* Light Mode Overrides */
+[data-theme='light'] {
+  --bg-primary: #fafafa;      /* Zinc 50 */
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #f4f4f5;     /* Zinc 100 */
+  
+  --border-color: #e4e4e7;    /* Zinc 200 */
+  --border-hover: #d4d4d8;    /* Zinc 300 */
+  
+  --text-primary: #09090b;    /* Zinc 950 */
+  --text-secondary: #52525b;  /* Zinc 600 */
+  --text-muted: #a1a1aa;      /* Zinc 400 */
+  
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+}
+
+/* Base resets */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  line-height: 1.5;
+  transition: background-color var(--transition-normal), color var(--transition-normal);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* Developer Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: var(--radius-sm);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-hover);
+}
+
+/* Clean Panel - Structural styling replacing Glassmorphism */
+.glass-panel {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  transition: border-color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.glass-panel-hover:hover {
+  border-color: var(--border-hover);
+  background-color: var(--bg-tertiary);
+}
+
+.glow-text {
+  /* Simplified text, no gradient masks for raw coding feel */
+  color: var(--text-primary);
+  font-weight: 700;
+}
