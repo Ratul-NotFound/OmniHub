@@ -14,11 +14,11 @@
   background-color: var(--bg-tertiary);
 }
 
-/* Grid View Card */
+/* Micro Grid View Card */
 .gridCard {
-  padding: 0.9rem 1rem;
-  min-height: 155px;
-  gap: 0.65rem;
+  padding: 0.75rem 0.85rem;
+  min-height: 96px;
+  gap: 0.5rem;
 }
 
 /* List View Card */
@@ -26,15 +26,15 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 0.8rem 1.1rem;
-  gap: 1.25rem;
+  padding: 0.65rem 0.95rem;
+  gap: 1rem;
 }
 
 /* Header Row */
 .header {
   display: flex;
   align-items: center;
-  gap: 0.65rem;
+  gap: 0.6rem;
   width: 100%;
 }
 
@@ -45,8 +45,8 @@
 /* Favicon Avatar */
 .avatar {
   position: relative;
-  width: 30px;
-  height: 30px;
+  width: 28px;
+  height: 28px;
   border-radius: var(--radius-sm);
   background-color: var(--bg-primary);
   display: flex;
@@ -58,8 +58,8 @@
 }
 
 .favicon {
-  width: 15px;
-  height: 15px;
+  width: 14px;
+  height: 14px;
   object-fit: contain;
   z-index: 2;
 }
@@ -68,7 +68,7 @@
   position: absolute;
   font-family: var(--font-mono);
   font-weight: 700;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: var(--text-primary);
   z-index: 1;
 }
@@ -176,31 +176,13 @@
   border-color: var(--accent-success) !important;
 }
 
-/* Description Text */
-.description {
-  font-size: 0.8rem;
-  color: var(--text-secondary);
-  line-height: 1.35;
-  margin: 0;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.listCard .description {
-  flex: 1;
-  -webkit-line-clamp: 1;
-}
-
 /* Footer Row */
 .footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 0.5rem;
-  padding-top: 0.55rem;
+  padding-top: 0.45rem;
   border-top: 1px solid var(--border-color);
 }
 
@@ -302,8 +284,8 @@
   .listCard {
     flex-direction: column;
     align-items: stretch;
-    gap: 0.6rem;
-    padding: 0.85rem;
+    gap: 0.5rem;
+    padding: 0.75rem;
   }
 
   .listCard .header {
@@ -316,6 +298,6 @@
 
   .listCard .footer {
     border-top: 1px solid var(--border-color);
-    padding-top: 0.5rem;
+    padding-top: 0.45rem;
   }
 }

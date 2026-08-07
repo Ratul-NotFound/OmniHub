@@ -101,9 +101,6 @@ export const ResourceCard: React.FC<ResourceCardProps> = ({
         </div>
       </div>
 
-      {/* Description Text */}
-      <p className={styles.description}>{resource.description}</p>
-
       {/* Footer Section (Tags + Details + Share + Visit Buttons) */}
       <div className={styles.footer}>
         <div className={styles.tagsRow}>
