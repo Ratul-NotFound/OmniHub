@@ -223,3 +223,26 @@
   line-height: 1.4;
   max-width: 280px;
 }
+
+@media (max-width: 480px) {
+  .overlay {
+    padding: 0.5rem;
+  }
+
+  .header {
+    padding: 0.85rem 1rem;
+  }
+
+  .body {
+    padding: 1rem;
+  }
+
+  .footer {
+    flex-direction: column-reverse;
+  }
+
+  .cancelBtn, .submitBtn {
+    width: 100%;
+    justify-content: center;
+  }
+}
