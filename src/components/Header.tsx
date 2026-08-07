@@ -9,7 +9,8 @@ import {
   Grid, 
   List, 
   X,
-  Sparkles
+  Sparkles,
+  ShieldCheck
 } from 'lucide-react';
 import { CATEGORIES } from '../data/resources';
 
@@ -23,8 +24,10 @@ interface HeaderProps {
   viewMode: 'grid' | 'list';
   setViewMode: (mode: 'grid' | 'list') => void;
   onOpenSubmitModal: () => void;
+  onOpenAdminModal: () => void;
   onOpenMobileMenu: () => void;
   resultsCount: number;
+  pendingCount: number;
 }
 
 export const Header: React.FC<HeaderProps> = ({
@@ -37,8 +40,10 @@ export const Header: React.FC<HeaderProps> = ({
   viewMode,
   setViewMode,
   onOpenSubmitModal,
+  onOpenAdminModal,
   onOpenMobileMenu,
-  resultsCount
+  resultsCount,
+  pendingCount
 }) => {
   const searchInputRef = useRef<HTMLInputElement>(null);
 
@@ -163,6 +168,39 @@ export const Header: React.FC<HeaderProps> = ({
               <Sun size={20} className={styles.sunIcon} />
             ) : (
               <Moon size={20} className={styles.moonIcon} />
+            )}
+          </button>
+
+          {/* Admin Moderation Queue Button */}
+          <button
+            onClick={onOpenAdminModal}
+            className={`${styles.themeToggle} glass-panel`}
+            title="Admin Moderation Queue"
+            aria-label="Admin Moderation Queue"
+            style={{ position: 'relative' }}
+          >
+            <ShieldCheck size={20} style={{ color: 'var(--accent-amber)' }} />
+            {pendingCount > 0 && (
+              <span 
+                style={{
+                  position: 'absolute',
+                  top: '-4px',
+                  right: '-4px',
+                  backgroundColor: 'var(--accent-danger)',
+                  color: '#ffffff',
+                  fontSize: '0.6rem',
+                  fontFamily: 'var(--font-mono)',
+                  fontWeight: 700,
+                  width: '16px',
+                  height: '16px',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center'
+                }}
+              >
+                {pendingCount}
+              </span>
             )}
           </button>
 

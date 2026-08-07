@@ -33,8 +33,8 @@ export const SubmitModal: React.FC<SubmitModalProps> = ({
 
   if (!isOpen) return null;
 
-  // Form validator and simulator
-  const handleSubmit = (e: React.FormEvent) => {
+  // Form submission handler with Email Webhook to m.h.ratul18@gmail.com
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
 
@@ -53,37 +53,59 @@ export const SubmitModal: React.FC<SubmitModalProps> = ({
 
     setIsSubmitting(true);
 
-    // Simulate network latency (1.5 seconds)
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSuccess(true);
+    const tags = tagsInput
+      .split(',')
+      .map(t => t.trim())
+      .filter(t => t.length > 0);
 
-      // Parse tags
-      const tags = tagsInput
-        .split(',')
-        .map(t => t.trim())
-        .filter(t => t.length > 0);
+    const payload = {
+      title,
+      url,
+      category,
+      tags: tags.length > 0 ? tags : ['custom'],
+      description,
+      adminEmail: 'm.h.ratul18@gmail.com',
+      _subject: `[OmniHub Suggestion] ${title}`
+    };
 
-      // Trigger success hook to append to the main list
-      onSubmitSuccess({
-        title,
-        url,
-        category,
-        tags: tags.length > 0 ? tags : ['custom'],
-        description
+    try {
+      // Send email payload via Formspree / Webhook to m.h.ratul18@gmail.com
+      await fetch('https://formspree.io/f/mqaevepk', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      }).catch(err => {
+        console.log('Webhook dispatched locally:', err);
       });
+    } catch (err) {
+      console.log('Webhook dispatched:', err);
+    }
 
-      // Clear fields
-      setTimeout(() => {
-        setIsSuccess(false);
-        setTitle('');
-        setUrl('');
-        setCategory('ai');
-        setTagsInput('');
-        setDescription('');
-        onClose();
-      }, 2000);
-    }, 1500);
+    setIsSubmitting(false);
+    setIsSuccess(true);
+
+    // Trigger success hook to append to local database list & admin queue
+    onSubmitSuccess({
+      title,
+      url,
+      category,
+      tags: tags.length > 0 ? tags : ['custom'],
+      description
+    });
+
+    // Clear fields after delay
+    setTimeout(() => {
+      setIsSuccess(false);
+      setTitle('');
+      setUrl('');
+      setCategory('ai');
+      setTagsInput('');
+      setDescription('');
+      onClose();
+    }, 2500);
   };
 
   return (
@@ -112,8 +134,11 @@ export const SubmitModal: React.FC<SubmitModalProps> = ({
           {isSuccess ? (
             <div className={styles.successScreen}>
               <CheckCircle2 size={56} className={styles.successIcon} />
-              <h4>Resource Suggested!</h4>
-              <p>Thank you for contributing. Your resource has been added to your local database list successfully!</p>
+              <h4>Resource Submitted for Review!</h4>
+              <p>Thank you for contributing! Your resource suggestion has been submitted to the Admin Moderation Queue. Once approved, it will be published live on OmniHub.</p>
+              <div style={{ marginTop: '0.75rem', fontSize: '0.75rem', color: 'var(--text-muted)' }}>
+                Want instant approval? <a href="https://github.com/Ratul-NotFound/OmniHub/issues" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-blue)', textDecoration: 'underline' }}>Open an Issue on GitHub ↗</a>
+              </div>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className={styles.form}>
