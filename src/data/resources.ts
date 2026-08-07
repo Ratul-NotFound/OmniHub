@@ -191,7 +191,7 @@ export const RESOURCES: Resource[] = [
   },
   {
     id: 'mcp-anthropic-suite',
-    title: 'Anthropic Official MCP Server Suite',
+    title: 'Anthropic Official MCP Suite',
     description: 'Official Anthropic suite of core Model Context Protocol servers for GitHub, PostgreSQL, Puppeteer, Filesystem, and Brave Search.',
     url: 'https://github.com/modelcontextprotocol/servers',
     category: 'ai',
@@ -209,6 +209,69 @@ export const RESOURCES: Resource[] = [
       'Includes GitHub, Postgres, Memory, Slack, Filesystem, and Google Maps MCPs'
     ],
     freeTierDetails: '100% Free Open Source'
+  },
+  {
+    id: 'mcp-linear',
+    title: 'Linear Issue Tracker MCP',
+    description: 'Allows AI coding agents to search engineering issues, update ticket statuses, and write code fix summaries directly inside Linear.',
+    url: 'https://github.com/jerhadf/linear-mcp-server',
+    category: 'ai',
+    subcategory: 'mcpskills',
+    subcategories: ['mcpskills', 'coding'],
+    tags: ['mcp', 'linear', 'issue tracking', 'project management', 'agent skill'],
+    rating: 4.9,
+    isHot: true,
+    useCases: [
+      'Allow AI agents to read assigned Linear tickets and write bug fixes',
+      'Auto-update Linear issue status to In Review when PR is opened'
+    ],
+    features: [
+      'Linear GraphQL API integration with LLM-optimized payloads',
+      'Create issues, search backlog, and append technical execution plans'
+    ],
+    freeTierDetails: '100% Free Open Source'
+  },
+  {
+    id: 'mcp-firecrawl',
+    title: 'Firecrawl LLM Scraping MCP',
+    description: 'Turns any website or documentation portal into clean, agent-ready LLM Markdown via Model Context Protocol.',
+    url: 'https://github.com/mendableai/firecrawl-mcp-server',
+    category: 'ai',
+    subcategory: 'mcpskills',
+    subcategories: ['mcpskills', 'coding'],
+    tags: ['mcp', 'firecrawl', 'web scraping', 'markdown', 'agent skill'],
+    rating: 4.9,
+    isHot: true,
+    useCases: [
+      'Crawl entire developer documentation sites for AI agent context',
+      'Bypass JS rendering to feed raw structured markdown to LLMs'
+    ],
+    features: [
+      'Full-page crawling, sub-link discovery, and HTML to Markdown conversion',
+      'Supports Claude Code, Antigravity AI, and Cursor'
+    ],
+    freeTierDetails: 'Free Tier Available (500 credits/month)'
+  },
+  {
+    id: 'mcp-browserbase',
+    title: 'Browserbase Cloud Browser MCP',
+    description: 'Headless cloud browser MCP server with anti-bot stealth mode enabling AI agents to inspect complex web applications.',
+    url: 'https://github.com/browserbase/mcp-server-browserbase',
+    category: 'ai',
+    subcategory: 'mcpskills',
+    subcategories: ['mcpskills', 'coding'],
+    tags: ['mcp', 'browserbase', 'cloud browser', 'stealth mode', 'agent skill'],
+    rating: 4.9,
+    isHot: true,
+    useCases: [
+      'Run stealth cloud browser sessions for AI agents to test web flows',
+      'Capture DOM screenshots and debug frontend layout issues'
+    ],
+    features: [
+      'Serverless headless Chrome infrastructure with session recording',
+      'Integrates with Playwright and Puppeteer MCP workflows'
+    ],
+    freeTierDetails: 'Free Developer Credits'
   },
   {
     id: 'mcp-supabase',
@@ -290,6 +353,47 @@ export const RESOURCES: Resource[] = [
     features: [
       'Cloudflare API v4 integration',
       'Manages Wrangler configs, Workers, D1 SQL, and Vectorize'
+    ],
+    freeTierDetails: '100% Free Open Source'
+  },
+  {
+    id: 'mcp-perplexity',
+    title: 'Perplexity AI Search MCP',
+    description: 'Enables AI coding agents to perform deep real-time web research with direct academic and developer web citations.',
+    url: 'https://github.com/perplexity-ai/mcp-server',
+    category: 'ai',
+    subcategory: 'mcpskills',
+    subcategories: ['mcpskills', 'coding'],
+    tags: ['mcp', 'perplexity', 'web search', 'citations', 'agent skill'],
+    rating: 4.9,
+    isHot: true,
+    useCases: [
+      'Real-time technical documentation research for Claude Code and Cursor',
+      'Finding zero-day bug solutions and GitHub issue discussions'
+    ],
+    features: [
+      'Sonar Reasoning API integration',
+      'Structured JSON responses with URL citations and code snippets'
+    ],
+    freeTierDetails: '100% Free Open Source'
+  },
+  {
+    id: 'mcp-replicate',
+    title: 'Replicate AI Model MCP',
+    description: 'Allows AI coding agents to generate images, transcribe audio, and run open-source AI models (Flux, Llama 3, Whisper) via prompts.',
+    url: 'https://github.com/replicate/mcp-server-replicate',
+    category: 'ai',
+    subcategory: 'mcpskills',
+    subcategories: ['mcpskills', 'coding'],
+    tags: ['mcp', 'replicate', 'flux', 'whisper', 'open-source ai', 'agent skill'],
+    rating: 4.8,
+    useCases: [
+      'Generate UI assets and mockups directly inside LLM agent coding sessions',
+      'Transcribe voice notes or audio files for agent task execution'
+    ],
+    features: [
+      'Replicate Cloud API integration with 25,000+ open-source models',
+      'Supports Flux 1.1 Pro, Llama 3.3 70B, and Whisper Large'
     ],
     freeTierDetails: '100% Free Open Source'
   },
